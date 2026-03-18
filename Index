@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mariam KABA – Office Manager</title>
+
+<style>
+body{font-family:Arial;margin:0;background:#f6f3ef;color:#1a1a1a}
+
+/* LANG */
+[data-lang="fr"] .en-text{display:none}
+[data-lang="en"] .fr-text{display:none}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;padding:15px 30px;background:white}
+.lang-btn{border:none;padding:6px 10px;margin:2px;cursor:pointer}
+.lang-btn.active{background:black;color:gold}
+
+/* HERO */
+.hero{display:flex;gap:40px;padding:40px}
+.hero img{width:250px;border-radius:15px}
+
+/* SERVICES */
+.svc-card{border:1px solid #ddd;margin:10px;border-radius:10px}
+.svc-head{padding:15px;cursor:pointer;background:#fff}
+.svc-body{max-height:0;overflow:hidden;transition:.3s;padding:0 15px}
+.svc-card.open .svc-body{max-height:200px;padding:15px}
+
+/* BUTTON */
+.btn{display:inline-block;margin-top:10px;padding:10px;background:black;color:gold;text-decoration:none}
+
+/* FORM */
+form{padding:20px}
+input,textarea{width:100%;margin-bottom:10px;padding:10px}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <strong>Mariam KABA</strong>
+
+  <div>
+    <button class="lang-btn active" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<div>
+<h1>Mariam KABA</h1>
+
+<p>
+<span class="fr-text">
+Professionnelle polyvalente avec +3 ans d'expérience en gestion, tourisme et événementiel.
+</span>
+
+<span class="en-text">
+Versatile professional with 3+ years in management, tourism and events.
+</span>
+</p>
+
+<a href="mailto:kabamariam.pro2@gmail.com" class="btn">
+<span class="fr-text">Me contacter</span>
+<span class="en-text">Contact me</span>
+</a>
+
+</div>
+
+<img src="yasmine.jpg" alt="photo">
+
+</section>
+
+<!-- SERVICES -->
+<section>
+
+<h2 style="padding:20px">Services</h2>
+
+<div class="svc-card">
+  <div class="svc-head">Service 1</div>
+  <div class="svc-body">
+    <p>Gestion administrative complète</p>
+    <a href="mailto:kabamariam.pro2@gmail.com?subject=Devis" class="btn">Demander un devis</a>
+  </div>
+</div>
+
+<div class="svc-card">
+  <div class="svc-head">Service 2</div>
+  <div class="svc-body">
+    <p>Organisation événementielle</p>
+    <a href="mailto:kabamariam.pro2@gmail.com?subject=Devis" class="btn">Demander un devis</a>
+  </div>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section>
+
+<h2 style="padding:20px">Contact</h2>
+
+<form action="mailto:kabamariam.pro2@gmail.com" method="post" enctype="text/plain">
+
+<input type="text" placeholder="Nom">
+<input type="email" placeholder="Email">
+<textarea placeholder="Message"></textarea>
+
+<button type="submit" class="btn">Envoyer</button>
+
+</form>
+
+</section>
+
+<!-- SCRIPT -->
+<script>
+
+// LANG SWITCH
+const buttons = document.querySelectorAll('.lang-btn');
+
+buttons.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const lang = btn.dataset.lang;
+    document.documentElement.setAttribute('data-lang',lang);
+
+    buttons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// ACCORDÉON
+document.querySelectorAll('.svc-head').forEach(head=>{
+  head.addEventListener('click',()=>{
+    head.parentElement.classList.toggle('open');
+  });
+});
+
+</script>
+
+</body>
+</html>
