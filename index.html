@@ -274,10 +274,50 @@ h1.hn em{font-style:italic;color:var(--gold);}
 .ag-cta{background:var(--ink);color:var(--gold);padding:10px 18px;border-radius:var(--radius-sm);font-size:12px;font-weight:700;letter-spacing:.6px;text-decoration:none;border:1.5px solid var(--ink);transition:all .25s;white-space:nowrap;}
 .ag-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold);}
 /* Sub-section "Projets Professionnels" dans Parcours */
-.proj-sub{margin-top:60px;}
+.proj-sub{margin-top:0;}
 .proj-sub-h{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
 .proj-sub-h h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--ink);white-space:nowrap;}
 .proj-sub-line{flex:1;height:1px;background:var(--border);}
+/* ---- ONGLETS ---- */
+.tab-bar{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:36px;}
+.tab-btn{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;letter-spacing:.4px;color:var(--ink-3);background:none;border:none;cursor:pointer;padding:10px 22px;position:relative;transition:color .2s;}
+.tab-btn::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--gold);transition:width .25s;}
+.tab-btn.active{color:var(--ink);}
+.tab-btn.active::after{width:100%;}
+.tab-panel{display:none;animation:fadeIn .25s ease;}
+.tab-panel.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+/* ---- MODAL TARIFS ---- */
+.modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9000;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-ov.open{display:flex;}
+.modal-box{background:var(--white);border-radius:var(--radius);max-width:660px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25);}
+.modal-head{padding:28px 30px 18px;border-bottom:1px solid var(--border-2);display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+.modal-head h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--ink);}
+.modal-head small{display:block;font-size:12px;color:var(--ink-3);margin-top:3px;}
+.modal-close{background:none;border:1px solid var(--border);border-radius:50px;width:32px;height:32px;cursor:pointer;font-size:16px;color:var(--ink-3);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.modal-close:hover{border-color:var(--gold);color:var(--ink);}
+.modal-body{padding:24px 30px 30px;}
+.modal-note{font-size:12.5px;color:var(--ink-3);background:var(--gold-pale);border-radius:8px;padding:10px 14px;margin-bottom:22px;}
+.price-table{width:100%;border-collapse:collapse;margin-bottom:22px;}
+.price-table th{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-dark);padding:8px 12px;text-align:left;border-bottom:2px solid var(--border);}
+.price-table td{padding:14px 12px;border-bottom:1px solid var(--border-2);font-size:13.5px;color:var(--ink-2);vertical-align:middle;}
+.price-table tr:last-child td{border-bottom:none;}
+.price-table .ptag{font-weight:700;color:var(--ink);font-size:14px;}
+.price-table .pprice{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--ink);white-space:nowrap;}
+.price-table .pprice small{font-family:'Outfit',sans-serif;font-size:11px;font-weight:500;color:var(--ink-3);margin-left:3px;}
+.price-table .pbadge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:50px;background:var(--gold-pale);color:var(--gold-dark);}
+.price-table .pbest{background:var(--ink);color:var(--gold);}
+.modal-wa{display:block;text-align:center;background:var(--ink);color:var(--gold);font-weight:700;font-size:13px;padding:14px;border-radius:var(--radius-sm);text-decoration:none;margin-top:4px;letter-spacing:.3px;transition:opacity .2s;}
+.modal-wa:hover{opacity:.85;}
+.modal-incl{margin-top:18px;}
+.modal-incl h4{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;}
+.modal-incl ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.modal-incl li{font-size:12px;color:var(--ink-2);padding-left:14px;position:relative;}
+.modal-incl li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700;}
+.ag-card .ag-detail-btn{display:block;text-align:center;font-size:11.5px;font-weight:600;color:var(--ink-3);background:var(--cream);border:1px solid var(--border-2);border-radius:var(--radius-sm);padding:8px;margin:-4px 18px 14px;cursor:pointer;transition:all .2s;letter-spacing:.3px;}
+.ag-card .ag-detail-btn:hover{border-color:var(--gold);color:var(--ink);}
+@media(max-width:600px){.modal-incl ul{grid-template-columns:1fr;}.modal-box{padding:0;}.tab-btn{padding:10px 14px;font-size:12px;}}
+/* fin onglets/modales */
 
 /* ---- CONTACT ---- */
 .contact-wrap{display:grid;grid-template-columns:2fr 1.1fr;gap:32px;max-width:960px;margin:0 auto;}
@@ -834,6 +874,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
         </div>
         <a href="https://wa.me/2250584230724?text=Bonjour%20Mariam%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20l'Omra%20d'Octobre%202026%20(17-27%20oct.)%20%F0%9F%95%8C" target="_blank" rel="noopener" class="ag-cta"><span class="fr-text">Réserver →</span><span class="en-text">Book now →</span></a>
       </div>
+      <button class="ag-detail-btn" onclick="openModal('modal-omra-oct')"><span class="fr-text">Voir tous les tarifs par type de chambre →</span><span class="en-text">See all room rates →</span></button>
     </div>
 
     <!-- 2. OMRA DÉCEMBRE 2026 – JANVIER 2027 -->
@@ -863,6 +904,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
         </div>
         <a href="https://wa.me/2250584230724?text=Bonjour%20Mariam%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20l'Omra%20de%20D%C3%A9cembre%202026%20%2F%20Janvier%202027%20%F0%9F%95%8C" target="_blank" rel="noopener" class="ag-cta"><span class="fr-text">Réserver →</span><span class="en-text">Book now →</span></a>
       </div>
+      <button class="ag-detail-btn" onclick="openModal('modal-omra-dec')"><span class="fr-text">Voir tous les tarifs par type de chambre →</span><span class="en-text">See all room rates →</span></button>
     </div>
 
     <!-- 3. RETRAITE WOMEN WELLNESS -->
@@ -935,6 +977,15 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
     <div class="stbar"></div>
     <p class="sd"><span class="fr-text">Une progression constante — de l'assistanat commercial au pilotage de +30 projets</span><span class="en-text">Steady progression — from commercial assistant to leading 30+ projects</span></p>
   </div>
+
+  <!-- ONGLETS PARCOURS -->
+  <div class="tab-bar" role="tablist">
+    <button class="tab-btn active" data-tab="exp" role="tab"><span class="fr-text">Expérience professionnelle</span><span class="en-text">Work experience</span></button>
+    <button class="tab-btn" data-tab="proj" role="tab"><span class="fr-text">Projets événementiels</span><span class="en-text">Event projects</span></button>
+  </div>
+
+  <!-- PANEL 1 : EXPÉRIENCE -->
+  <div class="tab-panel active" id="tab-exp">
   <div class="tl">
     <div class="tli">
       <div class="tld">◆</div>
@@ -1014,15 +1065,11 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
       </div>
     </div>
   </div>
+  </div><!-- /tab-panel exp -->
 
-  <!-- SOUS-SECTION : PROJETS ÉVÉNEMENTIELS -->
-  <div class="proj-sub">
-    <div class="proj-sub-h">
-      <span class="proj-sub-line"></span>
-      <h3><span class="fr-text">Projets événementiels <em style="color:var(--gold);font-style:italic;">marquants</em></span><span class="en-text">Key <em style="color:var(--gold);font-style:italic;">event projects</em></span></h3>
-      <span class="proj-sub-line"></span>
-    </div>
-    <p style="text-align:center;font-size:13.5px;color:var(--ink-3);margin-bottom:32px;"><span class="fr-text">Contributions opérationnelles sur des événements culturels, corporate et touristiques</span><span class="en-text">Operational contributions on cultural, corporate and tourism events</span></p>
+  <!-- PANEL 2 : PROJETS ÉVÉNEMENTIELS -->
+  <div class="tab-panel" id="tab-proj">
+    <p style="font-size:13.5px;color:var(--ink-3);margin-bottom:32px;"><span class="fr-text">Contributions opérationnelles sur des événements culturels, corporate et touristiques</span><span class="en-text">Operational contributions on cultural, corporate and tourism events</span></p>
     <div class="evg">
       <div class="evc">
         <div class="evh"><span class="evt"><span class="fr-text">Festival Culturel</span><span class="en-text">Cultural Festival</span></span></div>
@@ -1046,9 +1093,89 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
         <div class="evtags"><span class="evtag">Team building</span><span class="evtag">Omra / Umrah</span><span class="evtag"><span class="fr-text">Billetterie</span><span class="en-text">Ticketing</span></span><span class="evtag">Visa</span></div>
       </div>
     </div>
-  </div>
+  </div><!-- /tab-panel proj -->
 
 </section>
+    <div class="tli">
+      <div class="tld">◆</div>
+      <div class="tlc">
+        <div class="tlch">
+          <div><h3><span class="fr-text">Assistante Événementiel</span><span class="en-text">Events Assistant</span></h3><p class="tlco">DIM Voyages — Abidjan</p><p class="tlloc"><span class="fr-text">Agence voyage d'affaires &amp; mobilité corporate</span><span class="en-text">Business travel &amp; corporate mobility agency</span></p></div>
+          <span class="tldate"><span class="fr-text">Oct. 2025 – Présent</span><span class="en-text">Oct. 2025 – Present</span></span>
+        </div>
+        <ul class="tltasks">
+          <li><span class="fr-text">Logistique internationale : organisation complète des déplacements (itinéraires, hôtels, transferts)</span><span class="en-text">International logistics: full trip organisation (itineraries, hotels, transfers)</span></li>
+          <li><span class="fr-text">Événementiel corporate : support pour ateliers, formations et séminaires team building</span><span class="en-text">Corporate events: support for workshops, training and team building seminars</span></li>
+          <li><span class="fr-text">Négociation avec prestataires, restauration et gestion du matériel</span><span class="en-text">Supplier negotiation, catering and equipment management</span></li>
+          <li><span class="fr-text">Suivi rigoureux des dossiers clients, facturation et archivage</span><span class="en-text">Rigorous client file tracking, invoicing and archiving</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tli">
+      <div class="tld">◆</div>
+      <div class="tlc">
+        <div class="tlch">
+          <div><h3>Office Manager</h3><p class="tlco">Ivoir Trips International — Abidjan, Riviera Palmeraie</p><p class="tlloc"><span class="fr-text">Agence leader tourisme d'affaires &amp; événementiel</span><span class="en-text">Leading business tourism &amp; events agency</span></p></div>
+          <span class="tldate"><span class="fr-text">Fév. 2024 – Sept. 2025</span><span class="en-text">Feb. 2024 – Sept. 2025</span></span>
+        </div>
+        <div class="tlrea"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M5 2h6v5.5A3 3 0 015 7.5V2z"/><path d="M5 4.5H3a1.5 1.5 0 000 3H5"/><path d="M11 4.5h2a1.5 1.5 0 010 3H11"/><line x1="8" y1="10.5" x2="8" y2="12.5"/><line x1="5.5" y1="13.5" x2="10.5" y2="13.5"/></svg> <span class="fr-text">Optimisation des processus de coordination interne — amélioration de la circulation de l'information et de l'efficacité globale entre direction, équipes et prestataires.</span><span class="en-text">Internal coordination process optimisation — improved information flow and overall efficiency between management, teams and suppliers.</span></div>
+        <ul class="tltasks">
+          <li><span class="fr-text">Piloter l'organisation de +30 projets (synchronisation prestataires, direction, clients)</span><span class="en-text">Led 30+ project organisations (synchronising suppliers, management, clients)</span></li>
+          <li><span class="fr-text">Superviser l'approvisionnement, la maintenance et la négociation des contrats fournisseurs</span><span class="en-text">Supervised procurement, maintenance and supplier contract negotiation</span></li>
+          <li><span class="fr-text">Gérer l'agenda du Directeur &amp; préparer les comités de direction (CODIR)</span><span class="en-text">Managed Director's agenda &amp; prepared executive committee meetings</span></li>
+          <li><span class="fr-text">Front office : accueil physique &amp; téléphonique professionnel</span><span class="en-text">Front office: professional in-person &amp; phone reception</span></li>
+          <li><span class="fr-text">Centraliser la gestion administrative de 15 collaborateurs (onboarding → paie)</span><span class="en-text">Centralised HR management for 15 staff (onboarding → payroll)</span></li>
+          <li><span class="fr-text">Coordination des événements : Akan Festival, Akan Brunch, Ivorian Comedy Club, Jeudis Abidjanais</span><span class="en-text">Event coordination: Akan Festival, Akan Brunch, Ivorian Comedy Club, Jeudis Abidjanais</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tli">
+      <div class="tld">◆</div>
+      <div class="tlc">
+        <div class="tlch">
+          <div><h3><span class="fr-text">Assistante Marketing &amp; Communication</span><span class="en-text">Marketing &amp; Communication Assistant</span></h3><p class="tlco">Ivoir Trips International — Abidjan, Riviera Palmeraie</p><p class="tlloc"><span class="fr-text">Promotion de la destination Côte d'Ivoire</span><span class="en-text">Promoting Côte d'Ivoire as a destination</span></p></div>
+          <span class="tldate"><span class="fr-text">Nov. 2022 – Déc. 2023</span><span class="en-text">Nov. 2022 – Dec. 2023</span></span>
+        </div>
+        <div class="tlrea"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M5 2h6v5.5A3 3 0 015 7.5V2z"/><path d="M5 4.5H3a1.5 1.5 0 000 3H5"/><path d="M11 4.5h2a1.5 1.5 0 010 3H11"/><line x1="8" y1="10.5" x2="8" y2="12.5"/><line x1="5.5" y1="13.5" x2="10.5" y2="13.5"/></svg> <span class="fr-text">Meilleure coordination des partenaires et expérience participant plus fluide lors d'événements de grande envergure (+600 participants).</span><span class="en-text">Improved partner coordination and smoother participant experience at large-scale events (600+ attendees).</span></div>
+        <ul class="tltasks">
+          <li><span class="fr-text">Accueil &amp; orientation sur des flux de +600 participants (front office, protocole)</span><span class="en-text">Reception &amp; orientation for 600+ attendees (front office, protocol)</span></li>
+          <li><span class="fr-text">Création de contenus digitaux (affiches, visuels, stories) pour les événements</span><span class="en-text">Digital content creation (posters, visuals, stories) for events</span></li>
+          <li><span class="fr-text">Animation des comptes WhatsApp Business, Instagram et Facebook</span><span class="en-text">Managing WhatsApp Business, Instagram and Facebook accounts</span></li>
+          <li><span class="fr-text">Centralisation, numérisation et archivage des dossiers et contrats</span><span class="en-text">Centralisation, digitisation and archiving of files and contracts</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tli">
+      <div class="tld">◆</div>
+      <div class="tlc">
+        <div class="tlch">
+          <div><h3><span class="fr-text">Commerciale Itinérante</span><span class="en-text">Field Sales Representative</span></h3><p class="tlco">BWAN Technologies — Abidjan, Riviera Faya</p></div>
+          <span class="tldate"><span class="fr-text">Oct. 2021 – Mars 2022</span><span class="en-text">Oct. 2021 – Mar. 2022</span></span>
+        </div>
+        <ul class="tltasks">
+          <li><span class="fr-text">Gérer un portefeuille clients &amp; suivi des réclamations (SAV)</span><span class="en-text">Client portfolio management &amp; after-sales follow-up</span></li>
+          <li><span class="fr-text">Rédiger des offres commerciales &amp; assurer le suivi des dossiers</span><span class="en-text">Commercial proposals &amp; file follow-up</span></li>
+          <li><span class="fr-text">Prospection terrain ciblée → amélioration du taux de rendez-vous</span><span class="en-text">Targeted field prospecting → improved appointment rate</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tli">
+      <div class="tld mu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M8 13C8 13 1.5 9 1.5 5.5a3.5 3.5 0 017 0 3.5 3.5 0 017 0C15.5 9 8 13 8 13z"/></svg></div>
+      <div class="tlc">
+        <span class="benpill"><span class="fr-text">Bénévolat</span><span class="en-text">Volunteering</span></span>
+        <div class="tlch">
+          <div><h3><span class="fr-text">Facilitatrice Ateliers Éducatifs</span><span class="en-text">Educational Workshop Facilitator</span></h3><p class="tlco"><span class="fr-text">Centre « Ici on lit, ensuite on joue »</span><span class="en-text">Centre « Ici on lit, ensuite on joue »</span> — Abidjan, Riviera 2</p></div>
+          <span class="tldate">2021 – 2022</span>
+        </div>
+        <ul class="tltasks">
+          <li><span class="fr-text">Animation d'ateliers hebdomadaires pour des groupes de 20 enfants</span><span class="en-text">Weekly workshops for groups of 20 children</span></li>
+          <li><span class="fr-text">Gestion du matériel pédagogique &amp; sécurité des participants</span><span class="en-text">Educational material management &amp; participant safety</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div><!-- /tab-panel exp -->
+
 
 <section id="formations" class="sec sec-w">
   <div class="sh">
@@ -1057,78 +1184,102 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
     <div class="stbar"></div>
     <p class="sd"><span class="fr-text">Un investissement constant dans le développement des compétences — académique, professionnel et terrain</span><span class="en-text">A constant investment in skills development — academic, professional and hands-on</span></p>
   </div>
-  <div class="fmg">
-    <div class="fmc">
-      <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M1.5 7L8 4l6.5 3L8 10l-6.5-3z"/><path d="M4.5 8.5v3.5c0 1 1.5 2 3.5 2s3.5-1 3.5-2V8.5"/><line x1="14.5" y1="7" x2="14.5" y2="10.5"/></svg></div>
-      <h3><span class="fr-text">Responsable Ressources Humaines</span><span class="en-text">HR Manager</span></h3>
-      <p class="fmorg">Glory Management Consulting Group — CI</p>
-      <div class="fmmod">
-        <p class="fmmt"><span class="fr-text">Modules</span><span class="en-text">Modules</span></p>
-        <span class="modpill"><span class="fr-text">Droit du travail ivoirien</span><span class="en-text">Ivorian labour law</span></span>
-        <span class="modpill"><span class="fr-text">Recrutement &amp; intégration</span><span class="en-text">Recruitment &amp; onboarding</span></span>
-        <span class="modpill"><span class="fr-text">Administration du personnel</span><span class="en-text">HR administration</span></span>
-        <span class="modpill"><span class="fr-text">Gestion de la paie</span><span class="en-text">Payroll management</span></span>
-        <span class="modpill"><span class="fr-text">Stratégie RH &amp; GPEC</span><span class="en-text">HR strategy &amp; workforce planning</span></span>
-        <span class="modpill"><span class="fr-text">Management d'équipe</span><span class="en-text">Team management</span></span>
+
+  <!-- ONGLETS FORMATIONS -->
+  <div class="tab-bar" role="tablist">
+    <button class="tab-btn active" data-tab="fac" role="tab"><span class="fr-text">Parcours académique</span><span class="en-text">Academic path</span></button>
+    <button class="tab-btn" data-tab="cert" role="tab"><span class="fr-text">Certifications</span><span class="en-text">Certifications</span></button>
+    <button class="tab-btn" data-tab="encours" role="tab"><span class="fr-text">En cours</span><span class="en-text">In progress</span></button>
+  </div>
+
+  <!-- PANEL 1 : ACADÉMIQUE -->
+  <div class="tab-panel active" id="tab-fac">
+    <div class="fmg" style="grid-template-columns:1fr 1fr;">
+      <div class="fmc">
+        <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2h7a1 1 0 011 1v10a1 1 0 01-1 1H3"/><path d="M3 2a2 2 0 000 4M3 6a2 2 0 000 8M3 14a1 1 0 010-12"/><line x1="10" y1="7" x2="13.5" y2="7"/></svg></div>
+        <h3><span class="fr-text">Marketing &amp; Publicité</span><span class="en-text">Marketing &amp; Advertising</span></h3>
+        <p class="fmorg">PIGIER CI — Abidjan</p>
+        <div class="fmmod">
+          <p class="fmmt"><span class="fr-text">Compétences acquises</span><span class="en-text">Skills gained</span></p>
+          <span class="modpill"><span class="fr-text">Marketing stratégique</span><span class="en-text">Strategic marketing</span></span>
+          <span class="modpill"><span class="fr-text">Communication publicitaire</span><span class="en-text">Advertising communication</span></span>
+          <span class="modpill"><span class="fr-text">Marketing digital</span><span class="en-text">Digital marketing</span></span>
+          <span class="modpill"><span class="fr-text">Gestion de projet</span><span class="en-text">Project management</span></span>
+        </div>
+        <span class="sbadge stobt"><span class="fr-text">Parcours académique</span><span class="en-text">Academic pathway</span></span>
       </div>
-      <span class="sbadge stenc"><span class="fr-text">En cours · 2026</span><span class="en-text">In progress · 2026</span></span>
-    </div>
-    <div class="fmc">
-      <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M3 2h7a1 1 0 011 1v10a1 1 0 01-1 1H3"/><path d="M3 2a2 2 0 000 4M3 6a2 2 0 000 8M3 14a1 1 0 010-12"/><line x1="10" y1="7" x2="13.5" y2="7"/></svg></div>
-      <h3><span class="fr-text">Marketing &amp; Publicité</span><span class="en-text">Marketing &amp; Advertising</span></h3>
-      <p class="fmorg">PIGIER CI — Abidjan</p>
-      <div class="fmmod">
-        <p class="fmmt"><span class="fr-text">Compétences acquises</span><span class="en-text">Skills gained</span></p>
-        <span class="modpill"><span class="fr-text">Marketing stratégique</span><span class="en-text">Strategic marketing</span></span>
-        <span class="modpill"><span class="fr-text">Communication publicitaire</span><span class="en-text">Advertising communication</span></span>
-        <span class="modpill"><span class="fr-text">Marketing digital</span><span class="en-text">Digital marketing</span></span>
-        <span class="modpill"><span class="fr-text">Gestion de projet</span><span class="en-text">Project management</span></span>
+      <div class="fmc">
+        <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="14" x2="14" y2="14"/><rect x="3" y="8.5" width="3" height="5.5"/><rect x="6.5" y="5.5" width="3" height="8.5"/><rect x="10" y="2.5" width="3" height="11.5"/></svg></div>
+        <h3><span class="fr-text">Gestion Commerciale</span><span class="en-text">Commercial Management</span></h3>
+        <p class="fmorg">PIGIER CI — Abidjan</p>
+        <div class="fmmod">
+          <p class="fmmt"><span class="fr-text">Compétences acquises</span><span class="en-text">Skills gained</span></p>
+          <span class="modpill"><span class="fr-text">Gestion commerciale</span><span class="en-text">Commercial management</span></span>
+          <span class="modpill"><span class="fr-text">Relation client</span><span class="en-text">Customer relations</span></span>
+          <span class="modpill"><span class="fr-text">Négociation</span><span class="en-text">Negotiation</span></span>
+          <span class="modpill"><span class="fr-text">Analyse financière</span><span class="en-text">Financial analysis</span></span>
+        </div>
+        <span class="sbadge stobt"><span class="fr-text">Parcours académique</span><span class="en-text">Academic pathway</span></span>
       </div>
-      <span class="sbadge stobt"><span class="fr-text">Parcours académique</span><span class="en-text">Academic pathway</span></span>
-    </div>
-    <div class="fmc">
-      <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><line x1="2" y1="14" x2="14" y2="14"/><rect x="3" y="8.5" width="3" height="5.5"/><rect x="6.5" y="5.5" width="3" height="8.5"/><rect x="10" y="2.5" width="3" height="11.5"/></svg></div>
-      <h3><span class="fr-text">Gestion Commerciale</span><span class="en-text">Commercial Management</span></h3>
-      <p class="fmorg">PIGIER CI — Abidjan</p>
-      <div class="fmmod">
-        <p class="fmmt"><span class="fr-text">Compétences acquises</span><span class="en-text">Skills gained</span></p>
-        <span class="modpill"><span class="fr-text">Gestion commerciale</span><span class="en-text">Commercial management</span></span>
-        <span class="modpill"><span class="fr-text">Relation client</span><span class="en-text">Customer relations</span></span>
-        <span class="modpill"><span class="fr-text">Négociation</span><span class="en-text">Negotiation</span></span>
-      </div>
-      <span class="sbadge stobt"><span class="fr-text">Parcours académique</span><span class="en-text">Academic pathway</span></span>
-    </div>
-    <div class="fmc">
-      <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="8" cy="10" r="4.5"/><path d="M5.5 5.5L4 2h8l-1.5 3.5"/><line x1="6" y1="2" x2="8" y2="5.5"/><line x1="10" y1="2" x2="8" y2="5.5"/></svg></div>
-      <h3><span class="fr-text">Certification Microsoft Excel</span><span class="en-text">Microsoft Excel Certification</span></h3>
-      <p class="fmorg">Microsoft — Office 2016</p>
-      <div class="fmmod">
-        <p class="fmmt"><span class="fr-text">Validé</span><span class="en-text">Validated</span></p>
-        <span class="modpill">TCD / Pivot tables</span>
-        <span class="modpill"><span class="fr-text">Formules avancées</span><span class="en-text">Advanced formulas</span></span>
-        <span class="modpill"><span class="fr-text">Graphiques</span><span class="en-text">Charts</span></span>
-      </div>
-      <span class="sbadge stcer"><span class="fr-text">Certifiée</span><span class="en-text">Certified</span></span>
-    </div>
-    <div class="fmc">
-      <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="8" cy="8" r="6"/><path d="M8 2c-2 2-3 4-3 6s1 4 3 6"/><path d="M8 2c2 2 3 4 3 6s-1 4-3 6"/><line x1="2" y1="8" x2="14" y2="8"/></svg></div>
-      <h3>CLOM — <span class="fr-text">Tourisme Durable &amp; Patrimoine Culturel</span><span class="en-text">Sustainable Tourism &amp; Cultural Heritage</span></h3>
-      <p class="fmorg"><span class="fr-text">Organisation Internationale de la Francophonie (OIF)</span><span class="en-text">International Organisation of La Francophonie (OIF)</span></p>
-      <div class="fmmod">
-        <p class="fmmt">Topics</p>
-        <span class="modpill"><span class="fr-text">Tourisme responsable</span><span class="en-text">Responsible tourism</span></span>
-        <span class="modpill"><span class="fr-text">Patrimoine &amp; culture</span><span class="en-text">Heritage &amp; culture</span></span>
-        <span class="modpill">Écotourisme</span>
-      </div>
-      <span class="sbadge stcom"><span class="fr-text">Formation suivie</span><span class="en-text">Completed</span></span>
-    </div>
-    <div class="fmc" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:var(--gold-pale);border-style:dashed;">
-      <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M8 3.5C6.5 2.5 4 2 2 2v11c2 0 4.5.5 6 1.5V3.5z"/><path d="M8 3.5C9.5 2.5 12 2 14 2v11c-2 0-4.5.5-6 1.5V3.5z"/></svg></div>
-      <h3 style="margin-bottom:8px;"><span class="fr-text">En développement continu</span><span class="en-text">Continuously learning</span></h3>
-      <p style="font-size:12px;color:var(--ink-3);line-height:1.6;"><span class="fr-text">Veille active sur les tendances RH, événementiel, tourisme halal et office management en Afrique de l'Ouest.</span><span class="en-text">Active monitoring of HR, events, halal tourism and office management trends in West Africa.</span></p>
     </div>
   </div>
+
+  <!-- PANEL 2 : CERTIFICATIONS -->
+  <div class="tab-panel" id="tab-cert">
+    <div class="fmg" style="grid-template-columns:1fr 1fr;">
+      <div class="fmc">
+        <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="10" r="4.5"/><path d="M5.5 5.5L4 2h8l-1.5 3.5"/><line x1="6" y1="2" x2="8" y2="5.5"/><line x1="10" y1="2" x2="8" y2="5.5"/></svg></div>
+        <h3><span class="fr-text">Certification Microsoft Excel</span><span class="en-text">Microsoft Excel Certification</span></h3>
+        <p class="fmorg">Microsoft — Office 2016</p>
+        <div class="fmmod">
+          <p class="fmmt"><span class="fr-text">Validé</span><span class="en-text">Validated</span></p>
+          <span class="modpill">TCD / Pivot tables</span>
+          <span class="modpill"><span class="fr-text">Formules avancées</span><span class="en-text">Advanced formulas</span></span>
+          <span class="modpill"><span class="fr-text">Graphiques &amp; macros</span><span class="en-text">Charts &amp; macros</span></span>
+        </div>
+        <span class="sbadge stcer"><span class="fr-text">Certifiée</span><span class="en-text">Certified</span></span>
+      </div>
+      <div class="fmc">
+        <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 2c-2 2-3 4-3 6s1 4 3 6"/><path d="M8 2c2 2 3 4 3 6s-1 4-3 6"/><line x1="2" y1="8" x2="14" y2="8"/></svg></div>
+        <h3>CLOM — <span class="fr-text">Tourisme Durable &amp; Patrimoine Culturel</span><span class="en-text">Sustainable Tourism &amp; Cultural Heritage</span></h3>
+        <p class="fmorg"><span class="fr-text">Organisation Internationale de la Francophonie (OIF)</span><span class="en-text">International Organisation of La Francophonie (OIF)</span></p>
+        <div class="fmmod">
+          <p class="fmmt">Topics</p>
+          <span class="modpill"><span class="fr-text">Tourisme responsable</span><span class="en-text">Responsible tourism</span></span>
+          <span class="modpill"><span class="fr-text">Patrimoine &amp; culture</span><span class="en-text">Heritage &amp; culture</span></span>
+          <span class="modpill">Écotourisme</span>
+        </div>
+        <span class="sbadge stcom"><span class="fr-text">Formation suivie</span><span class="en-text">Completed</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 3 : EN COURS -->
+  <div class="tab-panel" id="tab-encours">
+    <div class="fmg" style="grid-template-columns:1fr;">
+      <div class="fmc">
+        <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 7L8 4l6.5 3L8 10l-6.5-3z"/><path d="M4.5 8.5v3.5c0 1 1.5 2 3.5 2s3.5-1 3.5-2V8.5"/><line x1="14.5" y1="7" x2="14.5" y2="10.5"/></svg></div>
+        <h3><span class="fr-text">Responsable Ressources Humaines</span><span class="en-text">HR Manager</span></h3>
+        <p class="fmorg">Glory Management Consulting Group — CI</p>
+        <div class="fmmod">
+          <p class="fmmt"><span class="fr-text">Modules</span><span class="en-text">Modules</span></p>
+          <span class="modpill"><span class="fr-text">Droit du travail ivoirien</span><span class="en-text">Ivorian labour law</span></span>
+          <span class="modpill"><span class="fr-text">Recrutement &amp; intégration</span><span class="en-text">Recruitment &amp; onboarding</span></span>
+          <span class="modpill"><span class="fr-text">Administration du personnel</span><span class="en-text">HR administration</span></span>
+          <span class="modpill"><span class="fr-text">Gestion de la paie</span><span class="en-text">Payroll management</span></span>
+          <span class="modpill"><span class="fr-text">Stratégie RH &amp; GPEC</span><span class="en-text">HR strategy &amp; workforce planning</span></span>
+          <span class="modpill"><span class="fr-text">Management d'équipe</span><span class="en-text">Team management</span></span>
+        </div>
+        <span class="sbadge stenc"><span class="fr-text">En cours · 2026</span><span class="en-text">In progress · 2026</span></span>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px;padding:20px;background:var(--gold-pale);border-radius:var(--radius);border:1px dashed var(--gold);">
+      <p style="font-size:13px;color:var(--ink-3);"><span class="fr-text">Veille active sur les tendances RH, événementiel, tourisme halal et office management en Afrique de l'Ouest.</span><span class="en-text">Active monitoring of HR, events, halal tourism and office management trends in West Africa.</span></p>
+    </div>
+  </div>
+
 </section>
+
 
 <!-- CONTACT -->
 <section id="contact" class="sec">
@@ -1502,7 +1653,131 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
   });
 });
 </script>
-<!-- WHATSAPP FAB — visible sur mobile -->
+<!-- MODAL OMRA OCTOBRE 2026 -->
+<div class="modal-ov" id="modal-omra-oct" role="dialog" aria-modal="true" onclick="if(event.target===this)closeModal('modal-omra-oct')">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <h3><span class="fr-text">Omra — Octobre 2026</span><span class="en-text">Umrah — October 2026</span></h3>
+        <small>17 – 27 octobre 2026 · 11 jours / 10 nuits · Départ Abidjan</small>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-omra-oct')" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-note"><span class="fr-text">🕌 Tous les tarifs incluent : visa Arabie Saoudite, vols aller-retour depuis Abidjan, hôtels 5★ à La Mecque &amp; Médine (petit-déjeuner inclus), transferts, 21 visites, encadrement 24h/24 &amp; pack cadeau pèlerin.</span><span class="en-text">🕌 All rates include: Saudi Arabia visa, return flights from Abidjan, 5★ hotels in Mecca &amp; Medina (breakfast), transfers, 21 visits, 24/7 guidance &amp; pilgrim gift pack.</span></p>
+      <table class="price-table">
+        <thead><tr><th><span class="fr-text">Type de chambre</span><span class="en-text">Room type</span></th><th><span class="fr-text">Prix / personne</span><span class="en-text">Price / person</span></th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="ptag"><span class="fr-text">Chambre Quadruple</span><span class="en-text">Quad Room</span><br><small style="font-weight:400;color:var(--ink-3);font-size:11.5px;"><span class="fr-text">4 personnes</span><span class="en-text">4 people</span></small></td><td class="pprice">2 845 000 <small>FCFA</small></td><td><span class="pbadge"><span class="fr-text">Économique</span><span class="en-text">Economy</span></span></td></tr>
+          <tr><td class="ptag"><span class="fr-text">Chambre Triple</span><span class="en-text">Triple Room</span><br><small style="font-weight:400;color:var(--ink-3);font-size:11.5px;"><span class="fr-text">3 personnes</span><span class="en-text">3 people</span></small></td><td class="pprice">3 100 000 <small>FCFA</small></td><td><span class="pbadge"><span class="fr-text">Standard</span><span class="en-text">Standard</span></span></td></tr>
+          <tr><td class="ptag"><span class="fr-text">Chambre Double</span><span class="en-text">Double Room</span><br><small style="font-weight:400;color:var(--ink-3);font-size:11.5px;"><span class="fr-text">2 personnes</span><span class="en-text">2 people</span></small></td><td class="pprice">3 500 000 <small>FCFA</small></td><td><span class="pbadge pbest"><span class="fr-text">Populaire</span><span class="en-text">Popular</span></span></td></tr>
+          <tr><td class="ptag"><span class="fr-text">Chambre Single</span><span class="en-text">Single Room</span><br><small style="font-weight:400;color:var(--ink-3);font-size:11.5px;"><span class="fr-text">1 personne</span><span class="en-text">1 person</span></small></td><td class="pprice">4 350 000 <small>FCFA</small></td><td><span class="pbadge"><span class="fr-text">Premium</span><span class="en-text">Premium</span></span></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11.5px;color:var(--ink-3);margin-bottom:16px;"><span class="fr-text">💳 Paiement en plusieurs fois disponible — contactez Mariam pour un plan personnalisé.</span><span class="en-text">💳 Instalment payments available — contact Mariam for a personalised plan.</span></p>
+      <a href="https://wa.me/2250584230724?text=Bonjour%20Mariam%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20l'Omra%20d'Octobre%202026%20et%20je%20voudrais%20des%20informations%20sur%20les%20tarifs%20%F0%9F%95%8C" target="_blank" rel="noopener" class="modal-wa"><span class="fr-text">📲 Contacter Mariam pour réserver</span><span class="en-text">📲 Contact Mariam to book</span></a>
+      <div class="modal-incl">
+        <h4><span class="fr-text">Ce qui est inclus</span><span class="en-text">What's included</span></h4>
+        <ul>
+          <li><span class="fr-text">Visa Arabie Saoudite</span><span class="en-text">Saudi Arabia visa</span></li>
+          <li><span class="fr-text">Vols A/R depuis Abidjan</span><span class="en-text">Return flights from Abidjan</span></li>
+          <li><span class="fr-text">Hôtels 5★ La Mecque</span><span class="en-text">5★ hotels Mecca</span></li>
+          <li><span class="fr-text">Hôtels 5★ Médine</span><span class="en-text">5★ hotels Medina</span></li>
+          <li><span class="fr-text">Petit-déjeuner tous les jours</span><span class="en-text">Breakfast daily</span></li>
+          <li><span class="fr-text">Transferts aéroport ↔ hôtel</span><span class="en-text">Airport ↔ hotel transfers</span></li>
+          <li><span class="fr-text">21 visites religieuses &amp; historiques</span><span class="en-text">21 religious &amp; historical visits</span></li>
+          <li><span class="fr-text">2 cours/jour avec chouyoukh</span><span class="en-text">2 daily lessons</span></li>
+          <li><span class="fr-text">Soirée feu de camp désert</span><span class="en-text">Desert bonfire evening</span></li>
+          <li><span class="fr-text">Montée du Mont Uhud</span><span class="en-text">Uhud Mountain ascent</span></li>
+          <li><span class="fr-text">Pack cadeau pèlerin</span><span class="en-text">Pilgrim gift pack</span></li>
+          <li><span class="fr-text">Encadrement 24h/24</span><span class="en-text">24/7 guidance</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL OMRA DÉCEMBRE 2026 / JANVIER 2027 -->
+<div class="modal-ov" id="modal-omra-dec" role="dialog" aria-modal="true" onclick="if(event.target===this)closeModal('modal-omra-dec')">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <h3><span class="fr-text">Omra — Décembre 2026 / Janvier 2027</span><span class="en-text">Umrah — December 2026 / January 2027</span></h3>
+        <small>24 déc. 2026 – 3 jan. 2027 · 11 jours / 10 nuits · Départ Abidjan</small>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-omra-dec')" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-note"><span class="fr-text">🕌 Tous les tarifs incluent : visa Arabie Saoudite, vols aller-retour depuis Abidjan, hôtels 5★ à La Mecque &amp; Médine (petit-déjeuner inclus), transferts, 21 visites, encadrement 24h/24 &amp; pack cadeau pèlerin.</span><span class="en-text">🕌 All rates include: Saudi Arabia visa, return flights from Abidjan, 5★ hotels in Mecca &amp; Medina (breakfast), transfers, 21 visits, 24/7 guidance &amp; pilgrim gift pack.</span></p>
+      <table class="price-table">
+        <thead><tr><th><span class="fr-text">Type de chambre</span><span class="en-text">Room type</span></th><th><span class="fr-text">Prix / personne</span><span class="en-text">Price / person</span></th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="ptag"><span class="fr-text">Chambre Quadruple</span><span class="en-text">Quad Room</span><br><small style="font-weight:400;color:var(--ink-3);font-size:11.5px;"><span class="fr-text">4 personnes</span><span class="en-text">4 people</span></small></td><td class="pprice">2 915 000 <small>FCFA</small></td><td><span class="pbadge"><span class="fr-text">Économique</span><span class="en-text">Economy</span></span></td></tr>
+          <tr><td class="ptag"><span class="fr-text">Chambre Triple</span><span class="en-text">Triple Room</span><br><small style="font-weight:400;color:var(--ink-3);font-size:11.5px;"><span class="fr-text">3 personnes</span><span class="en-text">3 people</span></small></td><td class="pprice">3 185 000 <small>FCFA</small></td><td><span class="pbadge"><span class="fr-text">Standard</span><span class="en-text">Standard</span></span></td></tr>
+          <tr><td class="ptag"><span class="fr-text">Chambre Double</span><span class="en-text">Double Room</span><br><small style="font-weight:400;color:var(--ink-3);font-size:11.5px;"><span class="fr-text">2 personnes</span><span class="en-text">2 people</span></small></td><td class="pprice">3 600 000 <small>FCFA</small></td><td><span class="pbadge pbest"><span class="fr-text">Populaire</span><span class="en-text">Popular</span></span></td></tr>
+          <tr><td class="ptag"><span class="fr-text">Chambre Single</span><span class="en-text">Single Room</span><br><small style="font-weight:400;color:var(--ink-3);font-size:11.5px;"><span class="fr-text">1 personne</span><span class="en-text">1 person</span></small></td><td class="pprice">4 465 000 <small>FCFA</small></td><td><span class="pbadge"><span class="fr-text">Premium</span><span class="en-text">Premium</span></span></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11.5px;color:var(--ink-3);margin-bottom:16px;"><span class="fr-text">💳 Paiement en plusieurs fois disponible — contactez Mariam pour un plan personnalisé.</span><span class="en-text">💳 Instalment payments available — contact Mariam for a personalised plan.</span></p>
+      <a href="https://wa.me/2250584230724?text=Bonjour%20Mariam%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20l'Omra%20D%C3%A9cembre%202026%20%2F%20Janvier%202027%20et%20je%20voudrais%20des%20informations%20sur%20les%20tarifs%20%F0%9F%95%8C" target="_blank" rel="noopener" class="modal-wa"><span class="fr-text">📲 Contacter Mariam pour réserver</span><span class="en-text">📲 Contact Mariam to book</span></a>
+      <div class="modal-incl">
+        <h4><span class="fr-text">Ce qui est inclus</span><span class="en-text">What's included</span></h4>
+        <ul>
+          <li><span class="fr-text">Visa Arabie Saoudite</span><span class="en-text">Saudi Arabia visa</span></li>
+          <li><span class="fr-text">Vols A/R depuis Abidjan</span><span class="en-text">Return flights from Abidjan</span></li>
+          <li><span class="fr-text">Hôtels 5★ La Mecque</span><span class="en-text">5★ hotels Mecca</span></li>
+          <li><span class="fr-text">Hôtels 5★ Médine</span><span class="en-text">5★ hotels Medina</span></li>
+          <li><span class="fr-text">Petit-déjeuner tous les jours</span><span class="en-text">Breakfast daily</span></li>
+          <li><span class="fr-text">Transferts aéroport ↔ hôtel</span><span class="en-text">Airport ↔ hotel transfers</span></li>
+          <li><span class="fr-text">21 visites religieuses &amp; historiques</span><span class="en-text">21 religious &amp; historical visits</span></li>
+          <li><span class="fr-text">2 cours/jour avec chouyoukh</span><span class="en-text">2 daily lessons</span></li>
+          <li><span class="fr-text">Ambiance Nouvel An aux lieux saints</span><span class="en-text">New Year at the holy sites</span></li>
+          <li><span class="fr-text">Excursions Badr, Uhud, grottes</span><span class="en-text">Badr, Uhud, caves excursions</span></li>
+          <li><span class="fr-text">Pack cadeau pèlerin</span><span class="en-text">Pilgrim gift pack</span></li>
+          <li><span class="fr-text">Encadrement 24h/24</span><span class="en-text">24/7 guidance</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- ONGLETS (tabs) ----
+document.querySelectorAll('.tab-bar').forEach(function(bar) {
+  bar.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var section = bar.closest('section') || document;
+      var target = btn.getAttribute('data-tab');
+      bar.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      section.querySelectorAll('.tab-panel').forEach(function(p) {
+        p.classList.remove('active');
+      });
+      var panel = section.querySelector('#tab-' + target);
+      if (panel) panel.classList.add('active');
+    });
+  });
+});
+
+// ---- MODALES TARIFS ----
+function openModal(id) {
+  var m = document.getElementById(id);
+  if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+}
+function closeModal(id) {
+  var m = document.getElementById(id);
+  if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-ov.open').forEach(function(m) {
+      m.classList.remove('open');
+    });
+    document.body.style.overflow = '';
+  }
+});
+</script>
+
 <a href="https://wa.me/2250584230724?text=Bonjour%20Mariam%2C%20j%27ai%20vu%20votre%20portfolio%20et%20je%20souhaite%20vous%20contacter." target="_blank" rel="noopener" class="wa-fab" aria-label="Contacter sur WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span class="fr-text">Écrire sur WhatsApp</span><span class="en-text">Message on WhatsApp</span>
