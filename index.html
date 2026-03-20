@@ -212,6 +212,39 @@ h1.hn em{font-style:italic;color:var(--gold);}
 .stenc::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 .stobt,.stcer,.stcom{background:var(--ink);color:var(--gold);}
 
+/* ---- PILIERS COMPÉTENCES ---- */
+.piliers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:40px;}
+.pilier-card{background:var(--white);border:1.5px solid var(--border-2);border-radius:var(--radius);padding:30px 28px;transition:all .22s;position:relative;overflow:hidden;}
+.pilier-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(var(--gold),var(--gold-dark));opacity:0;transition:opacity .2s;}
+.pilier-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateY(-3px);}
+.pilier-card:hover::before{opacity:1;}
+.pilier-icon{font-size:32px;margin-bottom:14px;line-height:1;}
+.pilier-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.2;}
+.pilier-desc{font-size:13.5px;color:var(--ink-3);line-height:1.8;margin-bottom:18px;}
+.pilier-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.pilier-tags span{font-size:11px;color:var(--gold-dark);background:var(--gold-pale);border:1px solid var(--border);padding:4px 10px;border-radius:50px;font-weight:600;}
+/* Strip langues / outils */
+.comp-strip{display:flex;align-items:center;gap:0;background:var(--white);border:1px solid var(--border-2);border-radius:var(--radius);overflow:hidden;}
+.comp-strip-item{flex:1;padding:16px 22px;display:flex;flex-direction:column;gap:4px;}
+.comp-strip-label{font-size:9.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dark);}
+.comp-strip-val{font-size:12.5px;color:var(--ink-2);font-weight:500;}
+.comp-strip-sep{width:1px;height:48px;background:var(--border-2);flex-shrink:0;}
+/* ---- FAQ CONTACT ---- */
+.faq-block{margin-top:40px;border-top:1px solid var(--border-2);padding-top:32px;}
+.faq-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:18px;}
+.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.faq-item{background:var(--cream);border:1px solid var(--border-2);border-radius:var(--radius-sm);padding:16px 18px;transition:border-color .2s;}
+.faq-item:hover{border-color:var(--gold);}
+.faq-q{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:6px;display:flex;align-items:center;gap:7px;}
+.faq-q::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.faq-a{font-size:12px;color:var(--ink-3);line-height:1.6;}
+/* ---- WHATSAPP FAB ---- */
+.wa-fab{position:fixed;bottom:28px;right:28px;z-index:500;display:none;align-items:center;gap:10px;background:#25d366;color:#fff;padding:13px 20px 13px 16px;border-radius:50px;font-size:13.5px;font-weight:700;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,.40);transition:all .25s;}
+.wa-fab:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,211,102,.50);}
+.wa-fab svg{width:20px;height:20px;flex-shrink:0;}
+@media(max-width:980px){.wa-fab{display:flex;}.piliers-grid{grid-template-columns:1fr;}.comp-strip{flex-direction:column;}.comp-strip-sep{width:100%;height:1px;}.faq-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){.pilier-card{padding:22px 18px;}.pilier-title{font-size:17px;}.pilier-desc{font-size:13px;}.faq-grid{grid-template-columns:1fr;}.wa-fab{bottom:20px;right:16px;padding:12px 16px 12px 14px;font-size:12.5px;}}
+
 /* ---- AGENDA / ÉVÉNEMENTS À VENIR ---- */
 .ag-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
 .ag-card{background:var(--white);border:1.5px solid var(--border-2);border-radius:var(--radius);padding:0;overflow:hidden;transition:all .22s;position:relative;display:flex;flex-direction:column;}
@@ -571,71 +604,47 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
 <!-- COMPÉTENCES -->
 <section id="competences" class="sec sec-w">
   <div class="sh">
-    <div class="stag"><span class="fr-text">Expertise &amp; Savoir-faire</span><span class="en-text">Skills &amp; Expertise</span></div>
-    <h2 class="st"><span class="fr-text">Mes <em>compétences</em></span><span class="en-text">My <em>skills</em></span></h2>
+    <div class="stag"><span class="fr-text">4 piliers · Une seule experte</span><span class="en-text">4 pillars · One expert</span></div>
+    <h2 class="st"><span class="fr-text">Ce que je <em>maîtrise</em></span><span class="en-text">What I <em>master</em></span></h2>
     <div class="stbar"></div>
-    <p class="sd"><span class="fr-text">Polyvalente, rigoureuse, orientée résultats — une combinaison taillée pour les environnements exigeants</span><span class="en-text">Versatile, rigorous, results-driven — built for demanding environments</span></p>
+    <p class="sd"><span class="fr-text">Pas une liste de cases à cocher — une expertise construite sur le terrain, projet après projet</span><span class="en-text">Not a checklist — expertise built in the field, project after project</span></p>
   </div>
 
-  <div class="sb">
-    <div class="sbh"><div class="sbi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="8" cy="8" r="2.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.42 1.42M11.54 11.54l1.41 1.41M3.05 12.95l1.42-1.41M11.54 4.46l1.41-1.41"/></svg></div><h3><span class="fr-text">Compétences Techniques</span><span class="en-text">Technical Skills</span></h3><div class="sbl"></div></div>
-    <div class="sg">
-      <div class="skc"><span class="slv">Expert</span><p><span class="fr-text">Support administratif &amp; opérationnel</span><span class="en-text">Administrative &amp; operational support</span></p></div>
-      <div class="skc"><span class="slv">Expert</span><p><span class="fr-text">Coordination interservices &amp; suivi d'activités</span><span class="en-text">Cross-department coordination</span></p></div>
-      <div class="skc"><span class="slv">Expert</span><p><span class="fr-text">Gestion services généraux &amp; moyens généraux</span><span class="en-text">General services &amp; facilities management</span></p></div>
-      <div class="skc"><span class="slv">Expert</span><p><span class="fr-text">Organisation logistique réunions &amp; événements</span><span class="en-text">Meeting &amp; event logistics</span></p></div>
-      <div class="skc"><span class="slv">Expert</span><p><span class="fr-text">Suivi fournisseurs, commandes &amp; facturation</span><span class="en-text">Vendor management &amp; invoicing</span></p></div>
-      <div class="skc"><span class="slv">Expert</span><p><span class="fr-text">Gestion documentaire, classement &amp; archivage</span><span class="en-text">Document management &amp; filing</span></p></div>
-      <div class="skc"><span class="slv">Expert</span><p><span class="fr-text">Administration RH, onboarding &amp; paie</span><span class="en-text">HR administration, onboarding &amp; payroll</span></p></div>
-      <div class="skc"><span class="slv">Expert</span><p><span class="fr-text">Billetterie, logistique voyage &amp; Omra</span><span class="en-text">Ticketing, travel logistics &amp; Umrah</span></p></div>
-      <div class="skc"><span class="slv">Expert</span><p><span class="fr-text">Communication interne &amp; reporting direction</span><span class="en-text">Internal communication &amp; management reporting</span></p></div>
-    </div>
-  </div>
+  <!-- 4 PILIERS -->
+  <div class="piliers-grid">
 
-  <div class="sb">
-    <div class="sbh"><div class="sbi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M12.5 1.5a2.5 2.5 0 00-2 4L3 13a1.5 1.5 0 002 2l7.5-8a2.5 2.5 0 000-5.5z"/><line x1="4.5" y1="11.5" x2="6" y2="13"/></svg></div><h3><span class="fr-text">Outils &amp; Langues</span><span class="en-text">Tools &amp; Languages</span></h3><div class="sbl"></div></div>
-    <div class="tlg">
-      <div>
-        <p style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px;"><span class="fr-text">OUTILS &amp; LOGICIELS</span><span class="en-text">TOOLS &amp; SOFTWARE</span></p>
-        <div class="trow"><span class="ti"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><line x1="5" y1="14" x2="11" y2="14"/><line x1="8" y1="11.5" x2="8" y2="14"/></svg></span>Suite Microsoft Office &amp; Google Workspace</div>
-        <div class="trow"><span class="ti"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M11.5 2l2.5 2.5-8 8H3.5v-2.5l8-8z"/><line x1="9.5" y1="3.5" x2="12.5" y2="6.5"/></svg></span>Canva</div>
-        <div class="trow"><span class="ti"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3.5" y="2.5" width="9" height="11" rx="1"/><line x1="6" y1="6.5" x2="10.5" y2="6.5"/><line x1="6" y1="9" x2="10.5" y2="9"/><line x1="6" y1="11.5" x2="8.5" y2="11.5"/></svg></span>Asana / Trello</div>
-        <div class="trow"><span class="ti"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="1.5" y="4.5" width="8" height="7" rx="1.5"/><path d="M9.5 7.5l5-3v7l-5-3"/></svg></span>Zoom / Microsoft Teams</div>
-        <div class="trow"><span class="ti"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><line x1="2" y1="14" x2="14" y2="14"/><rect x="3" y="8.5" width="3" height="5.5"/><rect x="6.5" y="5.5" width="3" height="8.5"/><rect x="10" y="2.5" width="3" height="11.5"/></svg></span>SIRH &amp; ERP (Odoo)</div>
-        <div class="trow"><span class="ti"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M14 3.5l-5 5 4 4.5H9.5L8 10 4 13.5v-1.5l4-3-4-3.5V4l5.5 2L14 3.5z"/></svg></span><span class="fr-text">Systèmes de réservation &amp; billetterie</span><span class="en-text">Booking &amp; ticketing systems</span></div>
-        <div class="trow"><span class="ti"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="4" y="4" width="8" height="8" rx="1"/><line x1="6" y1="1.5" x2="6" y2="4"/><line x1="10" y1="1.5" x2="10" y2="4"/><line x1="6" y1="12" x2="6" y2="14.5"/><line x1="10" y1="12" x2="10" y2="14.5"/><line x1="1.5" y1="6" x2="4" y2="6"/><line x1="1.5" y1="10" x2="4" y2="10"/><line x1="12" y1="6" x2="14.5" y2="6"/><line x1="12" y1="10" x2="14.5" y2="10"/></svg></span><span class="fr-text">Utilisation de l'IA pour optimiser les tâches</span><span class="en-text">AI tools for task optimization</span></div>
+    <!-- 1. OFFICE MANAGEMENT -->
+    <div class="pilier-card">
+      <div class="pilier-icon">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
       </div>
-      <div>
-        <p style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px;"><span class="fr-text">LANGUES</span><span class="en-text">LANGUAGES</span></p>
-        <div class="lc">
-          <div class="lch"><strong><span class="fr-text">Français</span><span class="en-text">French</span></strong><span class="lba"><span class="fr-text">★ Langue maternelle</span><span class="en-text">★ Native</span></span></div>
-          <div class="ltr"><div class="ltf" style="width:99%"></div></div>
-          <span class="lsub"><span class="fr-text">Maîtrise totale — oral &amp; écrit professionnel</span><span class="en-text">Full mastery — oral &amp; written</span></span>
-        </div>
-        <div class="lc">
-          <div class="lch"><strong><span class="fr-text">Anglais</span><span class="en-text">English</span></strong><span class="lba">B2 — EFSET</span></div>
-          <div class="ltr"><div class="ltf" style="width:65%"></div></div>
-          <span class="lsub"><span class="fr-text">Intermédiaire — emails, réunions, supports</span><span class="en-text">Intermediate — emails, meetings, presentations</span></span>
-        </div>
-      </div>
+      <h3 class="pilier-title"><span class="fr-text">Office Management &amp; Administration</span><span class="en-text">Office Management &amp; Administration</span></h3>
+      <p class="pilier-desc"><span class="fr-text">Le moteur silencieux de votre organisation. Je structure, coordonne et optimise tout ce qu'un bureau interne ferait — agenda, fournisseurs, reporting, RH — sans les contraintes d'un recrutement.</span><span class="en-text">The silent engine of your organisation. I structure, coordinate and optimise everything an in-house office would — calendar, vendors, reporting, HR — without the hiring constraints.</span></p>
+      <div class="pilier-tags"><span><span class="fr-text">Agenda &amp; planning</span><span class="en-text">Calendar &amp; planning</span></span><span><span class="fr-text">Gestion fournisseurs</span><span class="en-text">Vendor management</span></span><span>KPI &amp; reporting</span><span><span class="fr-text">Admin RH &amp; paie</span><span class="en-text">HR admin &amp; payroll</span></span></div>
     </div>
+
+    <!-- 2. TOURISME, ÉVÉNEMENTIEL & VOYAGES -->
+    <div class="pilier-card">
+      <div class="pilier-icon">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+      </div>
+      <h3 class="pilier-title"><span class="fr-text">Tourisme, Événementiel &amp; Voyages</span><span class="en-text">Tourism, Events &amp; Travel</span></h3>
+      <p class="pilier-desc"><span class="fr-text">Du team building corporate à l'escapade en famille, je transforme chaque projet en expérience fluide. Billetterie, logistique, hébergements, transferts, programme — chaque détail est anticipé pour que vous partiez l'esprit léger.</span><span class="en-text">From corporate team building to family getaways, I turn every project into a seamless experience. Ticketing, logistics, accommodation, transfers, itinerary — every detail anticipated so you travel stress-free.</span></p>
+      <div class="pilier-tags"><span><span class="fr-text">Billetterie &amp; visas</span><span class="en-text">Ticketing &amp; visas</span></span><span><span class="fr-text">Séminaires &amp; team building</span><span class="en-text">Seminars &amp; team building</span></span><span><span class="fr-text">Circuits sur-mesure</span><span class="en-text">Tailor-made trips</span></span><span><span class="fr-text">Groupes &amp; individuels</span><span class="en-text">Groups &amp; individuals</span></span></div>
+    </div>
+
+    <!-- 3. OMRA & VOYAGES SACRÉS -->
+    <div class="pilier-card">
+      <div class="pilier-icon">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9 2 6.5 4.5 6.5 7.5c0 4 5.5 10 5.5 10s5.5-6 5.5-10C17.5 4.5 15 2 12 2z"/><circle cx="12" cy="7.5" r="1.5"/><path d="M5 20h14"/><path d="M8 20v-3"/><path d="M16 20v-3"/></svg>
+      </div>
+      <h3 class="pilier-title"><span class="fr-text">Omra &amp; Voyages Sacrés</span><span class="en-text">Umrah &amp; Sacred Journeys</span></h3>
+      <p class="pilier-desc"><span class="fr-text">Un voyage spirituel mérite une organisation sans faille. Je prends en charge chaque détail — dossier visa, vols, hôtels à La Mecque &amp; Médine, transferts, préparation spirituelle — pour que vous vous consacriez pleinement à votre démarche intérieure.</span><span class="en-text">A spiritual journey deserves flawless organisation. I handle every detail — visa file, flights, hotels in Mecca &amp; Medina, transfers, spiritual preparation — so you focus entirely on your inner journey.</span></p>
+      <div class="pilier-tags"><span><span class="fr-text">Omra individuelle &amp; groupe</span><span class="en-text">Individual &amp; group Umrah</span></span><span><span class="fr-text">Omra Femmes</span><span class="en-text">Women's Umrah</span></span><span><span class="fr-text">Omra Managers premium</span><span class="en-text">Premium Managers</span></span><span><span class="fr-text">Départ Abidjan</span><span class="en-text">From Abidjan</span></span></div>
+    </div>
+
   </div>
 
-  <div class="sb">
-    <div class="sbh"><div class="sbi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><polygon points="8,1.5 10.5,6 15,7 11.5,10.5 12.5,15 8,12.5 3.5,15 4.5,10.5 1,7 5.5,6"/></svg></div><h3><span class="fr-text">Qualités Professionnelles</span><span class="en-text">Professional Qualities</span></h3><div class="sbl"></div></div>
-    <div class="qg">
-      <div class="qc"><div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="8" cy="8" r="6.5"/><circle cx="8" cy="8" r="3.5"/><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/></svg></div><p><span class="fr-text">Rigueur &amp; fiabilité</span><span class="en-text">Accuracy &amp; reliability</span></p></div>
-      <div class="qc"><div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3.5" y="2.5" width="9" height="11" rx="1"/><line x1="6" y1="6.5" x2="10.5" y2="6.5"/><line x1="6" y1="9" x2="10.5" y2="9"/><line x1="6" y1="11.5" x2="8.5" y2="11.5"/></svg></div><p><span class="fr-text">Organisation &amp; priorités</span><span class="en-text">Organisation &amp; priorities</span></p></div>
-      <div class="qc"><div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="4.5" y="7" width="7" height="7" rx="1"/><path d="M6 7v-2a2 2 0 014 0v2"/></svg></div><p><span class="fr-text">Discrétion &amp; confidentialité</span><span class="en-text">Discretion &amp; confidentiality</span></p></div>
-      <div class="qc"><div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M2 2.5h12a1 1 0 011 1v7.5a1 1 0 01-1 1H5l-3 2v-11a1 1 0 011-1z"/></svg></div><p><span class="fr-text">Communication structurée</span><span class="en-text">Structured communication</span></p></div>
-      <div class="qc"><div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><polyline points="10,2 6,9 9,9 6,14 12,7 8.5,7"/></svg></div><p><span class="fr-text">Réactivité &amp; imprévus</span><span class="en-text">Reactivity &amp; problem-solving</span></p></div>
-      <div class="qc"><div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="8" cy="8" r="6"/><path d="M8 2c-2 2-3 4-3 6s1 4 3 6"/><path d="M8 2c2 2 3 4 3 6s-1 4-3 6"/><line x1="2" y1="8" x2="14" y2="8"/></svg></div><p><span class="fr-text">Adaptabilité interculturelle</span><span class="en-text">Intercultural adaptability</span></p></div>
-      <div class="qc"><div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="6" cy="5" r="2.5"/><path d="M1.5 14c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5"/><circle cx="12" cy="4" r="2"/><path d="M10.5 10.5a3.5 3.5 0 014 3.5"/></svg></div><p><span class="fr-text">Travail en équipe</span><span class="en-text">Teamwork</span></p></div>
-      <div class="qc"><div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="8" cy="6" r="3.5"/><path d="M2 15c0-3.3 2.7-6 6-6s6 2.7 6 6"/><line x1="8" y1="9" x2="8" y2="12"/></svg></div><p><span class="fr-text">Autonomie &amp; proactivité</span><span class="en-text">Autonomy &amp; proactivity</span></p></div>
-      <div class="qc"><div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M6 4a4 4 0 014 4c0 2-1 3-2 4s-1 2 0 3"/><path d="M8 15a3 3 0 01-3-3c0-1.5 1-2.5 2-3"/></svg></div><p><span class="fr-text">Écoute &amp; sens du service</span><span class="en-text">Listening &amp; service mindset</span></p></div>
-      <div class="qc"><div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M8 13.5V10M5 13c0 2 1.5 3 3 3s3-1 3-3"/><path d="M10.5 4.5c0-1.3-1-2.5-2.5-2.5S5.5 3.2 5.5 4.5C5 6.5 4 8.5 3 10h10c-1-1.5-2-3.5-2.5-5.5z"/></svg></div><p><span class="fr-text">Orientée résultats</span><span class="en-text">Results-oriented</span></p></div>
-    </div>
-  </div>
 </section>
 
 <!-- SERVICES -->
@@ -1044,14 +1053,14 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
 <section id="formations" class="sec sec-w">
   <div class="sh">
     <div class="stag"><span class="fr-text">Apprentissage continu</span><span class="en-text">Continuous learning</span></div>
-    <h2 class="st"><span class="fr-text">Formations &amp; <em>Certifications</em></span><span class="en-text">Education &amp; <em>Certifications</em></span></h2>
+    <h2 class="st"><span class="fr-text">Parcours &amp; <em>Formations</em></span><span class="en-text">Education &amp; <em>Training</em></span></h2>
     <div class="stbar"></div>
-    <p class="sd"><span class="fr-text">Un investissement constant dans le développement des compétences</span><span class="en-text">A constant investment in skills development</span></p>
+    <p class="sd"><span class="fr-text">Un investissement constant dans le développement des compétences — académique, professionnel et terrain</span><span class="en-text">A constant investment in skills development — academic, professional and hands-on</span></p>
   </div>
   <div class="fmg">
     <div class="fmc">
       <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M1.5 7L8 4l6.5 3L8 10l-6.5-3z"/><path d="M4.5 8.5v3.5c0 1 1.5 2 3.5 2s3.5-1 3.5-2V8.5"/><line x1="14.5" y1="7" x2="14.5" y2="10.5"/></svg></div>
-      <h3><span class="fr-text">Certificat Responsable RH</span><span class="en-text">HR Manager Certificate</span></h3>
+      <h3><span class="fr-text">Responsable Ressources Humaines</span><span class="en-text">HR Manager</span></h3>
       <p class="fmorg">Glory Management Consulting Group — CI</p>
       <div class="fmmod">
         <p class="fmmt"><span class="fr-text">Modules</span><span class="en-text">Modules</span></p>
@@ -1060,34 +1069,34 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
         <span class="modpill"><span class="fr-text">Administration du personnel</span><span class="en-text">HR administration</span></span>
         <span class="modpill"><span class="fr-text">Gestion de la paie</span><span class="en-text">Payroll management</span></span>
         <span class="modpill"><span class="fr-text">Stratégie RH &amp; GPEC</span><span class="en-text">HR strategy &amp; workforce planning</span></span>
-        <span class="modpill"><span class="fr-text">Formation &amp; développement</span><span class="en-text">Training &amp; development</span></span>
         <span class="modpill"><span class="fr-text">Management d'équipe</span><span class="en-text">Team management</span></span>
-        <span class="modpill"><span class="fr-text">Entretiens professionnels</span><span class="en-text">Professional interviews</span></span>
       </div>
-      <span class="sbadge stenc"><span class="fr-text">En cours · Avr. 2026</span><span class="en-text">In progress · Apr. 2026</span></span>
+      <span class="sbadge stenc"><span class="fr-text">En cours · 2026</span><span class="en-text">In progress · 2026</span></span>
     </div>
     <div class="fmc">
       <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M3 2h7a1 1 0 011 1v10a1 1 0 01-1 1H3"/><path d="M3 2a2 2 0 000 4M3 6a2 2 0 000 8M3 14a1 1 0 010-12"/><line x1="10" y1="7" x2="13.5" y2="7"/></svg></div>
-      <h3><span class="fr-text">Licence PRO — Marketing &amp; Publicité</span><span class="en-text">Professional Degree — Marketing &amp; Advertising</span></h3>
+      <h3><span class="fr-text">Marketing &amp; Publicité</span><span class="en-text">Marketing &amp; Advertising</span></h3>
       <p class="fmorg">PIGIER CI — Abidjan</p>
       <div class="fmmod">
-        <p class="fmmt"><span class="fr-text">Compétences</span><span class="en-text">Skills</span></p>
+        <p class="fmmt"><span class="fr-text">Compétences acquises</span><span class="en-text">Skills gained</span></p>
         <span class="modpill"><span class="fr-text">Marketing stratégique</span><span class="en-text">Strategic marketing</span></span>
         <span class="modpill"><span class="fr-text">Communication publicitaire</span><span class="en-text">Advertising communication</span></span>
         <span class="modpill"><span class="fr-text">Marketing digital</span><span class="en-text">Digital marketing</span></span>
         <span class="modpill"><span class="fr-text">Gestion de projet</span><span class="en-text">Project management</span></span>
       </div>
+      <span class="sbadge stobt"><span class="fr-text">Parcours académique</span><span class="en-text">Academic pathway</span></span>
     </div>
     <div class="fmc">
       <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><line x1="2" y1="14" x2="14" y2="14"/><rect x="3" y="8.5" width="3" height="5.5"/><rect x="6.5" y="5.5" width="3" height="8.5"/><rect x="10" y="2.5" width="3" height="11.5"/></svg></div>
-      <h3>BTS — <span class="fr-text">Gestion Commerciale</span><span class="en-text">Commercial Management</span></h3>
+      <h3><span class="fr-text">Gestion Commerciale</span><span class="en-text">Commercial Management</span></h3>
       <p class="fmorg">PIGIER CI — Abidjan</p>
       <div class="fmmod">
-        <p class="fmmt"><span class="fr-text">Compétences</span><span class="en-text">Skills</span></p>
+        <p class="fmmt"><span class="fr-text">Compétences acquises</span><span class="en-text">Skills gained</span></p>
         <span class="modpill"><span class="fr-text">Gestion commerciale</span><span class="en-text">Commercial management</span></span>
         <span class="modpill"><span class="fr-text">Relation client</span><span class="en-text">Customer relations</span></span>
         <span class="modpill"><span class="fr-text">Négociation</span><span class="en-text">Negotiation</span></span>
       </div>
+      <span class="sbadge stobt"><span class="fr-text">Parcours académique</span><span class="en-text">Academic pathway</span></span>
     </div>
     <div class="fmc">
       <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="8" cy="10" r="4.5"/><path d="M5.5 5.5L4 2h8l-1.5 3.5"/><line x1="6" y1="2" x2="8" y2="5.5"/><line x1="10" y1="2" x2="8" y2="5.5"/></svg></div>
@@ -1111,7 +1120,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
         <span class="modpill"><span class="fr-text">Patrimoine &amp; culture</span><span class="en-text">Heritage &amp; culture</span></span>
         <span class="modpill">Écotourisme</span>
       </div>
-      <span class="sbadge stcom"><span class="fr-text">Complété</span><span class="en-text">Completed</span></span>
+      <span class="sbadge stcom"><span class="fr-text">Formation suivie</span><span class="en-text">Completed</span></span>
     </div>
     <div class="fmc" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:var(--gold-pale);border-style:dashed;">
       <div class="fmi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M8 3.5C6.5 2.5 4 2 2 2v11c2 0 4.5.5 6 1.5V3.5z"/><path d="M8 3.5C9.5 2.5 12 2 14 2v11c-2 0-4.5.5-6 1.5V3.5z"/></svg></div>
@@ -1186,6 +1195,26 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
       </a>
     </div>
   </div>
+
+  <!-- FAQ -->
+  <div class="faq-block">
+    <p class="faq-title" style="text-align:center;"><span class="fr-text">Questions fréquentes</span><span class="en-text">Frequently asked questions</span></p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <p class="faq-q"><span class="fr-text">Quel est votre délai de réponse ?</span><span class="en-text">What is your response time?</span></p>
+        <p class="faq-a"><span class="fr-text">Je réponds à tous les messages sous 24h ouvrées, souvent bien plus vite via WhatsApp.</span><span class="en-text">I reply to all messages within 24 business hours, often much faster via WhatsApp.</span></p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="fr-text">Travaillez-vous à distance ?</span><span class="en-text">Do you work remotely?</span></p>
+        <p class="faq-a"><span class="fr-text">Oui, je suis disponible en Full Remote pour toute entreprise en Afrique ou à l'international, sans contrainte géographique.</span><span class="en-text">Yes, I'm available fully remote for any company across Africa or internationally, with no geographic constraints.</span></p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="fr-text">Est-ce que le premier échange est gratuit ?</span><span class="en-text">Is the first exchange free?</span></p>
+        <p class="faq-a"><span class="fr-text">Absolument. Le devis et la consultation initiale sont toujours gratuits et sans engagement.</span><span class="en-text">Absolutely. The quote and initial consultation are always free and no-commitment.</span></p>
+      </div>
+    </div>
+  </div>
+
   <div class="refsec">
     <p class="reftag"><span class="fr-text">• Références Professionnelles •</span><span class="en-text">• Professional References •</span></p>
     <p class="refdesc"><span class="fr-text">Des professionnels qui témoignent de mon sérieux</span><span class="en-text">Professionals who vouch for my expertise</span></p>
@@ -1473,5 +1502,11 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
   });
 });
 </script>
+<!-- WHATSAPP FAB — visible sur mobile -->
+<a href="https://wa.me/2250584230724?text=Bonjour%20Mariam%2C%20j%27ai%20vu%20votre%20portfolio%20et%20je%20souhaite%20vous%20contacter." target="_blank" rel="noopener" class="wa-fab" aria-label="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="fr-text">Écrire sur WhatsApp</span><span class="en-text">Message on WhatsApp</span>
+</a>
+
 </body>
 </html>
