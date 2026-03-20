@@ -212,6 +212,40 @@ h1.hn em{font-style:italic;color:var(--gold);}
 .stenc::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 .stobt,.stcer,.stcom{background:var(--ink);color:var(--gold);}
 
+/* ---- AGENDA / ÉVÉNEMENTS À VENIR ---- */
+.ag-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.ag-card{background:var(--white);border:1.5px solid var(--border-2);border-radius:var(--radius);padding:0;overflow:hidden;transition:all .22s;position:relative;display:flex;flex-direction:column;}
+.ag-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateY(-4px);}
+.ag-banner{padding:20px 24px 16px;background:var(--ink);position:relative;}
+.ag-banner-omra{background:linear-gradient(135deg,#1a1a1a 0%,#2d2217 100%);}
+.ag-banner-wellness{background:linear-gradient(135deg,#1a3a2a 0%,#0f2419 100%);}
+.ag-banner-reset{background:linear-gradient(135deg,#1a1e3a 0%,#0f1429 100%);}
+.ag-type{display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.ag-type-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;flex-shrink:0;}
+.ag-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff;line-height:1.15;margin-bottom:4px;}
+.ag-dates{font-size:12px;color:rgba(255,255,255,.55);font-weight:500;}
+.ag-body{padding:20px 24px 0;flex:1;}
+.ag-orga{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;color:var(--gold-dark);background:var(--gold-pale);border:1px solid var(--border);border-radius:50px;padding:4px 12px;margin-bottom:14px;}
+.ag-desc{font-size:13px;color:var(--ink-3);line-height:1.75;margin-bottom:14px;}
+.ag-includes{list-style:none;margin-bottom:16px;}
+.ag-includes li{font-size:12px;color:var(--ink-2);font-weight:500;padding:4px 0;border-bottom:1px dotted var(--border-2);display:flex;align-items:flex-start;gap:8px;line-height:1.45;}
+.ag-includes li:last-child{border-bottom:none;}
+.ag-includes li::before{content:"✦";color:var(--gold);font-size:9px;flex-shrink:0;margin-top:3px;}
+.ag-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;}
+.ag-tag{font-size:10.5px;color:var(--ink-3);background:var(--cream);border:1px solid var(--border-2);padding:3px 9px;border-radius:50px;}
+.ag-footer{border-top:1px solid var(--border-2);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.ag-price{display:flex;flex-direction:column;}
+.ag-price-label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-3);}
+.ag-price-amount{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--ink);line-height:1;}
+.ag-price-note{font-size:10px;color:var(--ink-4);}
+.ag-cta{background:var(--ink);color:var(--gold);padding:10px 18px;border-radius:var(--radius-sm);font-size:12px;font-weight:700;letter-spacing:.6px;text-decoration:none;border:1.5px solid var(--ink);transition:all .25s;white-space:nowrap;}
+.ag-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold);}
+/* Sub-section "Projets Professionnels" dans Parcours */
+.proj-sub{margin-top:60px;}
+.proj-sub-h{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
+.proj-sub-h h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--ink);white-space:nowrap;}
+.proj-sub-line{flex:1;height:1px;background:var(--border);}
+
 /* ---- CONTACT ---- */
 .contact-wrap{display:grid;grid-template-columns:2fr 1.1fr;gap:32px;max-width:960px;margin:0 auto;}
 .cform{background:var(--white);border:1px solid var(--border-2);border-radius:var(--radius);padding:32px;}
@@ -306,6 +340,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
   .sg{grid-template-columns:1fr 1fr;}
   .svc-grid{grid-template-columns:1fr 1fr;}
   .evg{grid-template-columns:1fr;}
+  .ag-grid{grid-template-columns:1fr 1fr;}
   .tlg{grid-template-columns:1fr;}
   .fmg{grid-template-columns:1fr 1fr;}
   .qg{grid-template-columns:repeat(3,1fr);}
@@ -363,6 +398,12 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
   .tlch h3{font-size:14px;}
 
   .evg{grid-template-columns:1fr;}
+  .ag-grid{grid-template-columns:1fr;}
+  .ag-footer{flex-direction:column;align-items:flex-start;gap:14px;}
+  .ag-cta{width:100%;text-align:center;justify-content:center;}
+  .ag-banner{padding:16px 18px 12px;}
+  .ag-title{font-size:17px;}
+  .ag-body{padding:16px 18px 0;}
   .evc{padding:18px;}
   .evc h3{font-size:16px;}
 
@@ -438,7 +479,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
     <a href="#profil"><span class="fr-text">Profil</span><span class="en-text">Profile</span></a>
     <a href="#competences"><span class="fr-text">Compétences</span><span class="en-text">Skills</span></a>
     <a href="#services">Services</a>
-    <a href="#projets"><span class="fr-text">Événements</span><span class="en-text">Events</span></a>
+    <a href="#agenda"><span class="fr-text">Agenda</span><span class="en-text">Agenda</span></a>
     <a href="#parcours"><span class="fr-text">Parcours</span><span class="en-text">Experience</span></a>
     <a href="#formations"><span class="fr-text">Formations</span><span class="en-text">Education</span></a>
     <a href="#contact" class="ncta">Contact</a>
@@ -459,7 +500,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
   <a href="#profil" onclick="closeMobMenu()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="8" cy="5" r="3"/><path d="M2 14.5c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg> <span class="fr-text">Profil</span><span class="en-text">Profile</span></a>
   <a href="#competences" onclick="closeMobMenu()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="8" cy="8" r="2.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.42 1.42M11.54 11.54l1.41 1.41M3.05 12.95l1.42-1.41M11.54 4.46l1.41-1.41"/></svg> <span class="fr-text">Compétences</span><span class="en-text">Skills</span></a>
   <a href="#services" onclick="closeMobMenu()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="2" y="5.5" width="12" height="8.5" rx="1.5"/><path d="M5.5 5.5v-2A1.5 1.5 0 017 2h2a1.5 1.5 0 011.5 1.5v2"/><line x1="2" y1="9.5" x2="14" y2="9.5"/></svg> Services</a>
-  <a href="#projets" onclick="closeMobMenu()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="2" y="3.5" width="12" height="10.5" rx="1.5"/><line x1="2" y1="7.5" x2="14" y2="7.5"/><line x1="5.5" y1="1.5" x2="5.5" y2="4.5"/><line x1="10.5" y1="1.5" x2="10.5" y2="4.5"/></svg> <span class="fr-text">Événements</span><span class="en-text">Events</span></a>
+  <a href="#agenda" onclick="closeMobMenu()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="2" y="3.5" width="12" height="10.5" rx="1.5"/><line x1="2" y1="7.5" x2="14" y2="7.5"/><line x1="5.5" y1="1.5" x2="5.5" y2="4.5"/><line x1="10.5" y1="1.5" x2="10.5" y2="4.5"/></svg> <span class="fr-text">Agenda</span><span class="en-text">Agenda</span></a>
   <a href="#parcours" onclick="closeMobMenu()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3.5" y="2.5" width="9" height="11" rx="1"/><line x1="6" y1="6.5" x2="10.5" y2="6.5"/><line x1="6" y1="9" x2="10.5" y2="9"/><line x1="6" y1="11.5" x2="8.5" y2="11.5"/></svg> <span class="fr-text">Parcours</span><span class="en-text">Experience</span></a>
   <a href="#formations" onclick="closeMobMenu()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M1.5 7L8 4l6.5 3L8 10l-6.5-3z"/><path d="M4.5 8.5v3.5c0 1 1.5 2 3.5 2s3.5-1 3.5-2V8.5"/><line x1="14.5" y1="7" x2="14.5" y2="10.5"/></svg> <span class="fr-text">Formations</span><span class="en-text">Education</span></a>
   <div class="mob-divider"></div>
@@ -747,39 +788,135 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
   </div>
 </section>
 
-<!-- ÉVÉNEMENTS -->
-<section id="projets" class="sec sec-w">
+<!-- AGENDA — EXPÉRIENCES & ÉVÉNEMENTS À VENIR -->
+<section id="agenda" class="sec sec-w">
   <div class="sh">
-    <div class="stag"><span class="fr-text">Réalisations terrain</span><span class="en-text">Field achievements</span></div>
-    <h2 class="st"><span class="fr-text">Événements <em>marquants</em></span><span class="en-text">Key <em>events</em></span></h2>
+    <div class="stag"><span class="fr-text">Places limitées · Réservation ouverte</span><span class="en-text">Limited spots · Booking open</span></div>
+    <h2 class="st"><span class="fr-text">Expériences &amp; <em>Événements à venir</em></span><span class="en-text">Upcoming <em>Experiences &amp; Events</em></span></h2>
     <div class="stbar"></div>
-    <p class="sd"><span class="fr-text">Contributions opérationnelles sur des événements culturels, corporate et touristiques</span><span class="en-text">Operational contributions on cultural, corporate and tourism events</span></p>
+    <p class="sd"><span class="fr-text">Voyages spirituels, retraites bien-être et journées ressourcement — rejoignez l'aventure</span><span class="en-text">Spiritual journeys, wellness retreats and reset days — join the adventure</span></p>
   </div>
-  <div class="evg">
-    <div class="evc">
-      <div class="evh"><span class="evt"><span class="fr-text">Festival Culturel</span><span class="en-text">Cultural Festival</span></span></div>
-      <h3>Akan Festival &amp; Akan Brunch</h3>
-      <div class="evrl"><span class="fr-text">Coordinatrice Logistique &amp; Administrative</span><span class="en-text">Logistics &amp; Administrative Coordinator</span></div>
-      <p><span class="fr-text">Coordination logistique d'un festival culturel célébrant les peuples Akan. Accueil et orientation sur des flux de +600 participants. Gestion des accréditations, planification des espaces et coordination des prestataires.</span><span class="en-text">Logistics coordination of a cultural festival celebrating the Akan peoples. Reception and orientation for 600+ attendees. Accreditation management, space planning and supplier coordination.</span></p>
-      <div class="evtags"><span class="evtag">+600 participants</span><span class="evtag">Logistique</span><span class="evtag">Front office</span><span class="evtag">Prestataires</span></div>
-    </div>
-    <div class="evc">
-      <div class="evh"><span class="evt"><span class="fr-text">Networking Mensuel</span><span class="en-text">Monthly Networking</span></span></div>
-      <h3>Les Jeudis Abidjanais</h3>
-      <div class="evrl"><span class="fr-text">Organisatrice &amp; Responsable Accueil</span><span class="en-text">Organiser &amp; Reception Manager</span></div>
-      <p><span class="fr-text">Planification et coordination d'événements mensuels de networking réunissant professionnels et entrepreneurs. Communication digitale sur Instagram, Facebook et WhatsApp Business.</span><span class="en-text">Planning and coordination of monthly networking events bringing together professionals and entrepreneurs. Digital communication on Instagram, Facebook and WhatsApp Business.</span></p>
-      <div class="evtags"><span class="evtag">Networking</span><span class="evtag">Instagram / Facebook</span><span class="evtag"><span class="fr-text">Accueil</span><span class="en-text">Reception</span></span></div>
+  <div class="ag-grid">
+
+    <!-- 1. OMRA OCTOBRE 2026 -->
+    <div class="ag-card">
+      <div class="ag-banner ag-banner-omra">
+        <div class="ag-type"><span class="ag-type-dot"></span><span class="fr-text">Voyage Spirituel · UMRISE</span><span class="en-text">Spiritual Journey · UMRISE</span></div>
+        <div class="ag-title"><span class="fr-text">Omra — Octobre 2026</span><span class="en-text">Umrah — October 2026</span></div>
+        <div class="ag-dates">17 – 27 octobre 2026 · 11 jours / 10 nuits</div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-orga">✈ <span class="fr-text">Organisé par UMRISE · via Mariam KABA</span><span class="en-text">Organised by UMRISE · via Mariam KABA</span></div>
+        <p class="ag-desc"><span class="fr-text">Un voyage sacré organisé de A à Z — visa, vols, hôtels 5★ à La Mecque &amp; Médine, 2 cours/jour avec nos chouyoukh, excursions spirituelles exclusives &amp; activités immersives.</span><span class="en-text">A sacred journey fully organised — visa, flights, 5★ hotels in Mecca &amp; Medina, 2 daily lessons with our chouyoukh, exclusive spiritual excursions &amp; immersive activities.</span></p>
+        <ul class="ag-includes">
+          <li><span class="fr-text">Visa Arabie Saoudite + vols aller-retour</span><span class="en-text">Saudi Arabia visa + return flights</span></li>
+          <li><span class="fr-text">Hôtels 5★ La Mecque (Park Inn) &amp; Médine (Mias)</span><span class="en-text">5★ hotels Mecca (Park Inn) &amp; Medina (Mias)</span></li>
+          <li><span class="fr-text">21 visites religieuses, historiques &amp; secrètes</span><span class="en-text">21 religious, historical &amp; secret visits</span></li>
+          <li><span class="fr-text">Soirée feu de camp dans le désert · Montée du Mont Uhud</span><span class="en-text">Desert bonfire evening · Uhud Mountain ascent</span></li>
+          <li><span class="fr-text">Pack cadeau pèlerin · Transferts inclus · Encadrement 24h/24</span><span class="en-text">Pilgrim gift pack · Transfers included · 24/7 support</span></li>
+        </ul>
+        <div class="ag-tags"><span class="ag-tag"><span class="fr-text">La Mecque · Médine</span><span class="en-text">Mecca · Medina</span></span><span class="ag-tag">UMRISE</span><span class="ag-tag">5★</span><span class="ag-tag"><span class="fr-text">Paiement 3x sans frais</span><span class="en-text">3x payment</span></span></div>
+      </div>
+      <div class="ag-footer">
+        <div class="ag-price">
+          <span class="ag-price-label"><span class="fr-text">À partir de</span><span class="en-text">From</span></span>
+          <span class="ag-price-amount">1 850 €</span>
+          <span class="ag-price-note"><span class="fr-text">Quadruple · Départ France</span><span class="en-text">Quad room · France departure</span></span>
+        </div>
+        <a href="https://www.umrise.com/omra-octobre-2026/" target="_blank" rel="noopener" class="ag-cta"><span class="fr-text">Réserver →</span><span class="en-text">Book now →</span></a>
+      </div>
     </div>
 
-    <div class="evc">
-      <div class="evh"><span class="evt"><span class="fr-text">Team Building &amp; Voyages</span><span class="en-text">Team Building &amp; Travel</span></span></div>
-      <h3><span class="fr-text">Team Building, Séminaires &amp; Voyages Omra</span><span class="en-text">Team Building, Seminars &amp; Umrah Trips</span></h3>
-      <div class="evrl"><span class="fr-text">Chef de Projet &amp; Coordinatrice Voyages</span><span class="en-text">Project Lead &amp; Travel Coordinator</span></div>
-      <p><span class="fr-text">Organisation complète de team building corporate, séminaires et voyages Omra groupes. Billetterie, hébergements, visas, programme de visite, restauration, transport et suivi post-voyage.</span><span class="en-text">Full organisation of corporate team building, seminars and group Umrah trips. Ticketing, accommodation, visas, itinerary, catering, transport and post-trip follow-up.</span></p>
-      <div class="evtags"><span class="evtag">Team building</span><span class="evtag">Omra / Umrah</span><span class="evtag"><span class="fr-text">Billetterie</span><span class="en-text">Ticketing</span></span><span class="evtag">Visa</span></div>
+    <!-- 2. OMRA DÉCEMBRE 2026 – JANVIER 2027 -->
+    <div class="ag-card">
+      <div class="ag-banner ag-banner-omra">
+        <div class="ag-type"><span class="ag-type-dot"></span><span class="fr-text">Voyage Spirituel · UMRISE</span><span class="en-text">Spiritual Journey · UMRISE</span></div>
+        <div class="ag-title"><span class="fr-text">Omra — Décembre 2026 / Janvier 2027</span><span class="en-text">Umrah — December 2026 / January 2027</span></div>
+        <div class="ag-dates">24 déc. 2026 – 3 jan. 2027 · 11 jours / 10 nuits</div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-orga">✈ <span class="fr-text">Organisé par UMRISE · via Mariam KABA</span><span class="en-text">Organised by UMRISE · via Mariam KABA</span></div>
+        <p class="ag-desc"><span class="fr-text">Commencez la nouvelle année au cœur des lieux saints. Programme identique à l'Omra d'octobre, dans l'ambiance particulière du passage au Nouvel An entre La Mecque et Médine.</span><span class="en-text">Start the New Year at the heart of the holy sites. Same programme as the October trip, with the special atmosphere of ringing in the New Year between Mecca and Medina.</span></p>
+        <ul class="ag-includes">
+          <li><span class="fr-text">Visa Arabie Saoudite + vols aller-retour</span><span class="en-text">Saudi Arabia visa + return flights</span></li>
+          <li><span class="fr-text">Hôtels 5★ La Mecque (Park Inn) &amp; Médine (Mias)</span><span class="en-text">5★ hotels Mecca (Park Inn) &amp; Medina (Mias)</span></li>
+          <li><span class="fr-text">2 cours/jour avec chouyoukh · 21 visites exclusives</span><span class="en-text">2 daily lessons · 21 exclusive visits</span></li>
+          <li><span class="fr-text">Excursion désert, Badr, Uhud &amp; grottes historiques</span><span class="en-text">Desert, Badr, Uhud &amp; historical caves excursions</span></li>
+          <li><span class="fr-text">Pack cadeau · Encadrement 24h/24 · Paiement facilité</span><span class="en-text">Gift pack · 24/7 support · Flexible payment</span></li>
+        </ul>
+        <div class="ag-tags"><span class="ag-tag"><span class="fr-text">La Mecque · Médine</span><span class="en-text">Mecca · Medina</span></span><span class="ag-tag">UMRISE</span><span class="ag-tag"><span class="fr-text">Nouvel An</span><span class="en-text">New Year</span></span><span class="ag-tag"><span class="fr-text">Paiement 3x sans frais</span><span class="en-text">3x payment</span></span></div>
+      </div>
+      <div class="ag-footer">
+        <div class="ag-price">
+          <span class="ag-price-label"><span class="fr-text">À partir de</span><span class="en-text">From</span></span>
+          <span class="ag-price-amount">1 950 €</span>
+          <span class="ag-price-note"><span class="fr-text">Quadruple · Départ France</span><span class="en-text">Quad room · France departure</span></span>
+        </div>
+        <a href="https://www.umrise.com/omra-decembre-2026/" target="_blank" rel="noopener" class="ag-cta"><span class="fr-text">Réserver →</span><span class="en-text">Book now →</span></a>
+      </div>
     </div>
+
+    <!-- 3. RETRAITE WOMEN WELLNESS -->
+    <div class="ag-card">
+      <div class="ag-banner ag-banner-wellness">
+        <div class="ag-type"><span class="ag-type-dot"></span><span class="fr-text">Retraite Bien-être · Côte d'Ivoire</span><span class="en-text">Wellness Retreat · Côte d'Ivoire</span></div>
+        <div class="ag-title"><span class="fr-text">Retraite Women Wellness</span><span class="en-text">Women Wellness Retreat</span></div>
+        <div class="ag-dates"><span class="fr-text">5 jours · San Pedro, Grand Béréby &amp; Sassandra</span><span class="en-text">5 days · San Pedro, Grand Béréby &amp; Sassandra</span></div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-orga">🌿 <span class="fr-text">Organisé par Mariam KABA · Places limitées</span><span class="en-text">Organised by Mariam KABA · Limited spots</span></div>
+        <p class="ag-desc"><span class="fr-text">Un séjour ressourcement 100% féminin au sud de la Côte d'Ivoire. Entre plages sauvages, forêt tropicale et communautés locales — reconnectez-vous à vous-même loin du bruit.</span><span class="en-text">A 100% female wellness stay in southern Côte d'Ivoire. Between wild beaches, tropical forest and local communities — reconnect with yourself, far from the noise.</span></p>
+        <ul class="ag-includes">
+          <li><span class="fr-text">Hébergement éco-lodge en bord de mer · Petit-déjeuner inclus</span><span class="en-text">Eco-lodge by the sea · Breakfast included</span></li>
+          <li><span class="fr-text">Séances yoga matinales &amp; méditation guidée</span><span class="en-text">Morning yoga sessions &amp; guided meditation</span></li>
+          <li><span class="fr-text">Massages bien-être &amp; soins corps naturels</span><span class="en-text">Wellness massages &amp; natural body treatments</span></li>
+          <li><span class="fr-text">Excursions : cascade, forêt, piroguiers locaux</span><span class="en-text">Excursions: waterfall, forest, local pirogue rides</span></li>
+          <li><span class="fr-text">Transfert depuis Abidjan · Groupes de 8 femmes max.</span><span class="en-text">Transfer from Abidjan · Groups of 8 women max.</span></li>
+        </ul>
+        <div class="ag-tags"><span class="ag-tag">San Pedro</span><span class="ag-tag">Grand Béréby</span><span class="ag-tag">Sassandra</span><span class="ag-tag"><span class="fr-text">Women only</span><span class="en-text">Women only</span></span></div>
+      </div>
+      <div class="ag-footer">
+        <div class="ag-price">
+          <span class="ag-price-label"><span class="fr-text">À partir de</span><span class="en-text">From</span></span>
+          <span class="ag-price-amount">185 000 <small style="font-size:13px;">FCFA</small></span>
+          <span class="ag-price-note"><span class="fr-text">Par personne · Chambre partagée</span><span class="en-text">Per person · Shared room</span></span>
+        </div>
+        <a href="#contact" class="ag-cta"><span class="fr-text">S'inscrire →</span><span class="en-text">Register →</span></a>
+      </div>
+    </div>
+
+    <!-- 4. RESET DAY — BAIE DES MILLIARDAIRES -->
+    <div class="ag-card">
+      <div class="ag-banner ag-banner-reset">
+        <div class="ag-type"><span class="ag-type-dot"></span><span class="fr-text">Journée Ressourcement · Abidjan</span><span class="en-text">Reset Day · Abidjan</span></div>
+        <div class="ag-title"><span class="fr-text">Reset Day — Baie des Milliardaires</span><span class="en-text">Reset Day — Baie des Milliardaires</span></div>
+        <div class="ag-dates"><span class="fr-text">1 journée immersive · Cocody, Abidjan</span><span class="en-text">1 immersive day · Cocody, Abidjan</span></div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-orga">✨ <span class="fr-text">Organisé par Mariam KABA · Groupe fermé</span><span class="en-text">Organised by Mariam KABA · Closed group</span></div>
+        <p class="ag-desc"><span class="fr-text">Une journée de déconnexion complète au cœur de l'un des cadres les plus exclusifs d'Abidjan. Networking positif, activités outdoor sur l'eau et moments de reconnexion à soi.</span><span class="en-text">A full disconnection day in one of Abidjan's most exclusive settings. Positive networking, outdoor water activities and moments of inner reconnection.</span></p>
+        <ul class="ag-includes">
+          <li><span class="fr-text">Accès espace premium en bord de baie</span><span class="en-text">Premium waterfront space access</span></li>
+          <li><span class="fr-text">Brunch &amp; snacks sains inclus toute la journée</span><span class="en-text">Brunch &amp; healthy snacks included all day</span></li>
+          <li><span class="fr-text">Activités nautiques : kayak, paddle, bateau</span><span class="en-text">Water activities: kayak, paddle, boat</span></li>
+          <li><span class="fr-text">Atelier vision board &amp; networking intentionnel</span><span class="en-text">Vision board workshop &amp; intentional networking</span></li>
+          <li><span class="fr-text">Séance photo souvenir · Cadeaux surprises</span><span class="en-text">Souvenir photoshoot · Surprise gifts</span></li>
+        </ul>
+        <div class="ag-tags"><span class="ag-tag"><span class="fr-text">Baie des Milliardaires</span><span class="en-text">Milliardaires Bay</span></span><span class="ag-tag">Networking</span><span class="ag-tag">Outdoor</span><span class="ag-tag">Abidjan</span></div>
+      </div>
+      <div class="ag-footer">
+        <div class="ag-price">
+          <span class="ag-price-label"><span class="fr-text">À partir de</span><span class="en-text">From</span></span>
+          <span class="ag-price-amount">45 000 <small style="font-size:13px;">FCFA</small></span>
+          <span class="ag-price-note"><span class="fr-text">Par personne · 15 places maximum</span><span class="en-text">Per person · 15 spots maximum</span></span>
+        </div>
+        <a href="#contact" class="ag-cta"><span class="fr-text">Réserver ma place →</span><span class="en-text">Reserve my spot →</span></a>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- PARCOURS -->
 <section id="parcours" class="sec">
@@ -868,9 +1005,42 @@ footer p{font-size:12px;color:rgba(255,255,255,.3);}
       </div>
     </div>
   </div>
+
+  <!-- SOUS-SECTION : PROJETS ÉVÉNEMENTIELS -->
+  <div class="proj-sub">
+    <div class="proj-sub-h">
+      <span class="proj-sub-line"></span>
+      <h3><span class="fr-text">Projets événementiels <em style="color:var(--gold);font-style:italic;">marquants</em></span><span class="en-text">Key <em style="color:var(--gold);font-style:italic;">event projects</em></span></h3>
+      <span class="proj-sub-line"></span>
+    </div>
+    <p style="text-align:center;font-size:13.5px;color:var(--ink-3);margin-bottom:32px;"><span class="fr-text">Contributions opérationnelles sur des événements culturels, corporate et touristiques</span><span class="en-text">Operational contributions on cultural, corporate and tourism events</span></p>
+    <div class="evg">
+      <div class="evc">
+        <div class="evh"><span class="evt"><span class="fr-text">Festival Culturel</span><span class="en-text">Cultural Festival</span></span></div>
+        <h3>Akan Festival &amp; Akan Brunch</h3>
+        <div class="evrl"><span class="fr-text">Coordinatrice Logistique &amp; Administrative</span><span class="en-text">Logistics &amp; Administrative Coordinator</span></div>
+        <p><span class="fr-text">Coordination logistique d'un festival culturel célébrant les peuples Akan. Accueil et orientation sur des flux de +600 participants. Gestion des accréditations, planification des espaces et coordination des prestataires.</span><span class="en-text">Logistics coordination of a cultural festival celebrating the Akan peoples. Reception and orientation for 600+ attendees. Accreditation management, space planning and supplier coordination.</span></p>
+        <div class="evtags"><span class="evtag">+600 participants</span><span class="evtag">Logistique</span><span class="evtag">Front office</span><span class="evtag">Prestataires</span></div>
+      </div>
+      <div class="evc">
+        <div class="evh"><span class="evt"><span class="fr-text">Networking Mensuel</span><span class="en-text">Monthly Networking</span></span></div>
+        <h3>Les Jeudis Abidjanais</h3>
+        <div class="evrl"><span class="fr-text">Organisatrice &amp; Responsable Accueil</span><span class="en-text">Organiser &amp; Reception Manager</span></div>
+        <p><span class="fr-text">Planification et coordination d'événements mensuels de networking réunissant professionnels et entrepreneurs. Communication digitale sur Instagram, Facebook et WhatsApp Business.</span><span class="en-text">Planning and coordination of monthly networking events bringing together professionals and entrepreneurs. Digital communication on Instagram, Facebook and WhatsApp Business.</span></p>
+        <div class="evtags"><span class="evtag">Networking</span><span class="evtag">Instagram / Facebook</span><span class="evtag"><span class="fr-text">Accueil</span><span class="en-text">Reception</span></span></div>
+      </div>
+      <div class="evc">
+        <div class="evh"><span class="evt"><span class="fr-text">Team Building &amp; Voyages</span><span class="en-text">Team Building &amp; Travel</span></span></div>
+        <h3><span class="fr-text">Team Building, Séminaires &amp; Voyages Omra</span><span class="en-text">Team Building, Seminars &amp; Umrah Trips</span></h3>
+        <div class="evrl"><span class="fr-text">Chef de Projet &amp; Coordinatrice Voyages</span><span class="en-text">Project Lead &amp; Travel Coordinator</span></div>
+        <p><span class="fr-text">Organisation complète de team building corporate, séminaires et voyages Omra groupes. Billetterie, hébergements, visas, programme de visite, restauration, transport et suivi post-voyage.</span><span class="en-text">Full organisation of corporate team building, seminars and group Umrah trips. Ticketing, accommodation, visas, itinerary, catering, transport and post-trip follow-up.</span></p>
+        <div class="evtags"><span class="evtag">Team building</span><span class="evtag">Omra / Umrah</span><span class="evtag"><span class="fr-text">Billetterie</span><span class="en-text">Ticketing</span></span><span class="evtag">Visa</span></div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
-<!-- FORMATIONS -->
 <section id="formations" class="sec sec-w">
   <div class="sh">
     <div class="stag"><span class="fr-text">Apprentissage continu</span><span class="en-text">Continuous learning</span></div>
